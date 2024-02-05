@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7877659}
   - component: {fileID: 7877658}
   m_Layer: 5
-  m_Name: Shop
+  m_Name: ShopScrin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,16 +150,16 @@ RectTransform:
   m_GameObject: {fileID: 7877656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32573748, y: 0.31379202, z: 0.28526548}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 638521690}
   m_Father: {fileID: 1057798989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.4823, y: 0.0009765625}
-  m_SizeDelta: {x: 8000.7, y: 4723.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00012207, y: -0.00000095367}
+  m_SizeDelta: {x: 3840, y: 2160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7877658
 MonoBehaviour:
@@ -927,8 +927,8 @@ RectTransform:
   - {fileID: 193218703}
   - {fileID: 1317590091}
   - {fileID: 1659957329}
-  - {fileID: 2007038344}
   - {fileID: 7877657}
+  - {fileID: 2007038344}
   - {fileID: 1783671484}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1791,7 +1791,7 @@ RectTransform:
   m_GameObject: {fileID: 2007038343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32573748, y: 0.31379202, z: 0.28526548}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1599849314}
@@ -1799,8 +1799,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.4823, y: 0.0009765625}
-  m_SizeDelta: {x: 8000.7, y: 4723.5}
+  m_AnchoredPosition: {x: 0.024658203, y: 0.00024414062}
+  m_SizeDelta: {x: 0.050781, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007038345
 MonoBehaviour:
