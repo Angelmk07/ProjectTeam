@@ -16,6 +16,7 @@ public class Clicker : MonoBehaviour
     private void Awake()
     {
         _batton.onClick.AddListener(OnClick);
+        Time.timeScale = 1;
     }
     public void OnClick()
     {

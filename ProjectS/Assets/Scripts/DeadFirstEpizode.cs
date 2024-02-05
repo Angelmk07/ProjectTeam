@@ -7,9 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class DeadFirstEpizode : MonoBehaviour
 {
+    public void timeScale_1()
+    {
+
+        Clicker.Speed = 1f;
+    }
     public void GoToMain()
     {
-        Time.timeScale = 1;
+        
         SceneManager.LoadScene("MainScrin");
 
 
