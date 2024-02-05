@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class Clicker : MonoBehaviour
 {
     [SerializeField] private Button _batton;
-    [SerializeField] private TextMeshProUGUI _clicksCountField;
+    [SerializeField] private Image HealBar;
 
-    private int _clicksCount;
+    
 
     private void Awake()
     {
@@ -18,8 +18,9 @@ public class Clicker : MonoBehaviour
     }
     public void OnClick()
     {
-        _clicksCount++;
-        Debug.Log($"Clicked! { _clicksCount}");
-        _clicksCountField.text = _clicksCount.ToString();
+        //HealBarCount +=0.1f;
+        //Debug.Log($"Clicked! { HealBarCount}");
+        HealBar.fillAmount += 0.025f;
+        Time.timeScale += 0.001f;
     }
 }
