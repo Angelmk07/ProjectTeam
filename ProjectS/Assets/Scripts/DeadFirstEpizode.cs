@@ -9,8 +9,9 @@ public class DeadFirstEpizode : MonoBehaviour
 {
     public void GoToMain()
     {
-        SceneManager.LoadScene("MainScrin");
         Time.timeScale = 1;
+        SceneManager.LoadScene("MainScrin");
+
 
     }
 }

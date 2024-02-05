@@ -7,10 +7,12 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private Image Healbar;
     [SerializeField] private GameObject EndScrin;
-
+    
     void Update()
     {
-        Healbar.fillAmount -=Time.deltaTime*0.1f;
+        float courrentSpeed = Clicker.Speed; 
+        
+        Healbar.fillAmount -=Time.deltaTime*0.1f*courrentSpeed;
         if (Healbar.fillAmount == 0)
         {
             
