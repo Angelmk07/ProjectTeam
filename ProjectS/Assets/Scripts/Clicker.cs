@@ -12,6 +12,7 @@ public class Clicker : MonoBehaviour
     [SerializeField] public static float Speed = 1f;
     [SerializeField] private Image HealBar_2;
     [SerializeField] public float SpeedChange = 0.01f;
+    [SerializeField] public ClicksBank _clicksBank;
     private float HealBar_2Change = 0.035f;
     private float HealBarChange = 0.04f;
     private void Awake()
@@ -21,8 +22,8 @@ public class Clicker : MonoBehaviour
     }
     public void OnClick()
     {
-        //HealBarCount +=0.1f;
-        //Debug.Log($"Clicked! { HealBarCount}");
+        _clicksBank.Clicks++;
+        Debug.Log($"Clicked! {_clicksBank.Clicks}"); 
 
         Speed += SpeedChange;
         HealBar.fillAmount += HealBarChange;
@@ -31,9 +32,5 @@ public class Clicker : MonoBehaviour
             
             HealBar_2.fillAmount = HealBar_2.fillAmount+HealBar_2Change-(1f-HealBar.fillAmount);
         }
-        /*else
-        {
-            HealBar.fillAmount += HealBarChange;
-        }*/
-    }
+     }
 }
