@@ -55,7 +55,7 @@ public class Clicker : MonoBehaviour
 
         
             bool _IsHaveHeal = AddHealbar.IsHealHave;
-            Speed += SpeedChange;
+            //Speed += SpeedChange;
 
             if (_IsHaveHeal)
             {
