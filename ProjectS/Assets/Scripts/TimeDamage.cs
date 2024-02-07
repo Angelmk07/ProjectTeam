@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private Image Healbar;
     [SerializeField] private GameObject EndScrin;
+    [SerializeField] private GameObject Cavas;
     [SerializeField] private Image HealBar_2;
     
     void Update()
@@ -36,7 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
             
             Time.timeScale = 0;
             EndScrin.SetActive(true);
-           
+            Cavas.SetActive(false);
 
         }
     }
