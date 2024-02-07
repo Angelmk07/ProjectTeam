@@ -36,8 +36,9 @@ public class NewBehaviourScript : MonoBehaviour
         {
             
             Time.timeScale = 0;
-            EndScrin.SetActive(true);
             Cavas.SetActive(false);
+            EndScrin.SetActive(true);
+
 
         }
     }
