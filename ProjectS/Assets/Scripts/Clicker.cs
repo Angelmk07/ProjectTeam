@@ -21,30 +21,35 @@ public class Clicker : MonoBehaviour
     private float HealBarChange = 0.04f;
     private void Awake()
     {
-        _batton.onClick.AddListener(OnClick);
+        _batton.onClick.AddListener(Update);
         Time.timeScale = 1;
     }
-    public void OnClick()
+    public void Update()
     {
-        _clicksBankView.text = $"Exp {_clicksBank.Clicks++} " ;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _clicksBankView.text = $"Exp {_clicksBank.Clicks++} " ;
 
         
-        bool _IsHaveHeal = AddHealbar.IsHealHave;
-        Speed += SpeedChange;
+            bool _IsHaveHeal = AddHealbar.IsHealHave;
+            Speed += SpeedChange;
 
-        if (_IsHaveHeal)
-        {
-            HealBar.fillAmount += HealBarChange;
-            if (HealBar.fillAmount+HealBarChange>=1)
+            if (_IsHaveHeal)
             {
+                HealBar.fillAmount += HealBarChange;
+                if (HealBar.fillAmount+HealBarChange>=1)
+                {
             
-                HealBar_2.fillAmount = HealBar_2.fillAmount+HealBar_2Change-(1f-HealBar.fillAmount);
+                    HealBar_2.fillAmount = HealBar_2.fillAmount+HealBar_2Change-(1f-HealBar.fillAmount);
+                }
             }
-        }
-        else
-        {
-            HealBar.fillAmount += HealBarChange;
+            else
+            {
+                HealBar.fillAmount += HealBarChange;
+            }
+
         }
 
+        
     }
 }
