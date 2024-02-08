@@ -54,7 +54,7 @@ public class Clicker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} " ;
-            
+            SoundPlay.Play();
             
             bool _IsHaveHeal = AddHealbar.IsHealHave;
             //Speed += SpeedChange;
