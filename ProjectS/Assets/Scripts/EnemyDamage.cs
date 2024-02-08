@@ -12,6 +12,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private BrainHeats Damage;
     [SerializeField] private ClicksBank _clicksBank;
     [SerializeField] private Image ScinChnge;
+    
 
     void Update()
     {
@@ -36,6 +37,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (EnemyBar.fillAmount == 0)
         {
+            
             _clicksBank.Clicks += 2000;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Color.blue;
