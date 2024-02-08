@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Random = UnityEngine.Random;
+using DG.Tweening;
+
+
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -13,7 +17,9 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private Image EnemyBar;
     [SerializeField] private BrainHeats Damage;
     [SerializeField] private ClicksBank _clicksBank;
-    [SerializeField] private Image ScinChnge;
+    [SerializeField] public Image ScinChnge;
+    //public  Animation  anim ;
+    
 
     
 
@@ -27,6 +33,17 @@ public class EnemyDamage : MonoBehaviour
 
             DeadFirstEpizode.IsDead = false;
         }
+        
+    }
+
+    //private void Awake()
+    //{
+     //   anim = GetComponent<Animation>();
+    //}
+    IEnumerator DelayedFunction(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+       
     }
 
     public void EnemyHeatDamage()
@@ -38,11 +55,19 @@ public class EnemyDamage : MonoBehaviour
 
         EnemyBar.fillAmount -= Damage.Pover;
 
+        
         if (EnemyBar.fillAmount == 0)
         {
+
+            Color newRndColor = Random.ColorHSV();
+           
+            
+            //anim.Play("Dead");
             _clicksBank.Clicks += 2000;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
-            ScinChnge.color = Color.blue;
+            ScinChnge.color = Random.ColorHSV();
+            
+            
             EnemyBar.fillAmount = 1f;
         }
         

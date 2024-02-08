@@ -17,7 +17,7 @@ public class Clicker : MonoBehaviour
     [SerializeField] private ClicksBank _clicksBank;
     public AudioSource SoundPlay;
 
-
+    
     private float HealBar_2Change = 0.035f;
     private float HealBarChange = 0.04f;
     private void Awake()
@@ -54,8 +54,8 @@ public class Clicker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} " ;
-
-        
+            
+            
             bool _IsHaveHeal = AddHealbar.IsHealHave;
             //Speed += SpeedChange;
 
