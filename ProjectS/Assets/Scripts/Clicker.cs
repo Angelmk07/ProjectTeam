@@ -15,6 +15,7 @@ public class Clicker : MonoBehaviour
     [SerializeField] private Image HealBar_2;
     [SerializeField] public float SpeedChange = 0.01f;
     [SerializeField] private ClicksBank _clicksBank;
+    public AudioSource SoundPlay;
 
 
     private float HealBar_2Change = 0.035f;
@@ -28,6 +29,7 @@ public class Clicker : MonoBehaviour
     public void OnClick()
     {
         _clicksBankView.text = $"Exp {_clicksBank.Clicks++} " ;
+        SoundPlay.Play();
 
         
         bool _IsHaveHeal = AddHealbar.IsHealHave;

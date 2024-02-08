@@ -7555,6 +7555,7 @@ MonoBehaviour:
   HealBar_2: {fileID: 259429200}
   SpeedChange: 0.01
   _clicksBank: {fileID: 94887312}
+  SoundPlay: {fileID: 1035064719}
 --- !u!1 &1142670323
 GameObject:
   m_ObjectHideFlags: 0
