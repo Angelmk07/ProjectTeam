@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,11 +8,14 @@ using TMPro;
 
 public class EnemyDamage : MonoBehaviour
 {
+    [SerializeField] public AudioSource SoundPlay;
     [SerializeField] private TextMeshProUGUI _clicksBankView;
     [SerializeField] private Image EnemyBar;
     [SerializeField] private BrainHeats Damage;
     [SerializeField] private ClicksBank _clicksBank;
     [SerializeField] private Image ScinChnge;
+
+    
 
     void Update()
     {
@@ -27,7 +31,7 @@ public class EnemyDamage : MonoBehaviour
 
     public void EnemyHeatDamage()
     { 
-
+       SoundPlay.Play();
 
         
 
