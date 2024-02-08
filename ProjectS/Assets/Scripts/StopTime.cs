@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class StopTime : MonoBehaviour
 {
+ 
 
 
 
@@ -18,6 +19,7 @@ public class StopTime : MonoBehaviour
     public void OnClicReturn()
     {
         Time.timeScale = 1;
+        Autoheal.isDoStop = true;
     }
 
     

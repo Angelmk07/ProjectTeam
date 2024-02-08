@@ -1462,6 +1462,56 @@ MonoBehaviour:
   stak: {fileID: 1894063657}
   imagePower: {fileID: 1922132224}
   stakValue: 0
+--- !u!1 &390428742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390428743}
+  - component: {fileID: 390428744}
+  m_Layer: 5
+  m_Name: AutoHeal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &390428743
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390428742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1057798989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &390428744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390428742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb59c06940e412438f64effdf58b969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Healbar: {fileID: 546798141}
+  HealBar_2: {fileID: 259429200}
 --- !u!1 &415189657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,6 +2809,7 @@ RectTransform:
   - {fileID: 94887313}
   - {fileID: 2091918017}
   - {fileID: 1222362880}
+  - {fileID: 390428743}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5084,7 +5135,7 @@ MonoBehaviour:
   Healbar: {fileID: 546798141}
   HealBar_2: {fileID: 259429200}
   Exp: {fileID: 94887312}
-  isPaviv: {fileID: 0}
+  isPaviv: {fileID: 1854965027}
 --- !u!114 &1960379954
 MonoBehaviour:
   m_ObjectHideFlags: 0
