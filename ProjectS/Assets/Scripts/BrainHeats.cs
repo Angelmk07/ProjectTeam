@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BrainHeats : MonoBehaviour
 {
-    private float _pover = 0.1f;
+    private float _pover = 0.01f;
 
     public float Pover
     {

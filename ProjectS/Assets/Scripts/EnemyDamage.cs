@@ -63,7 +63,7 @@ public class EnemyDamage : MonoBehaviour
            
             
             //anim.Play("Dead");
-            _clicksBank.Clicks += 2000;
+            _clicksBank.Clicks += 500;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
             
