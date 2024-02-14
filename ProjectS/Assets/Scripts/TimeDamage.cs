@@ -18,17 +18,17 @@ public class NewBehaviourScript : MonoBehaviour
             float courrentSpeed = Clicker.Speed;
             if (HealBar_2.fillAmount<=0)
             {
-                Healbar.fillAmount -=Time.deltaTime*0.1f*courrentSpeed;
+                Healbar.fillAmount -=Time.deltaTime*0.009f*courrentSpeed;
             }
             else
             {
-                HealBar_2.fillAmount -=Time.deltaTime*0.1f*courrentSpeed;
+                HealBar_2.fillAmount -=Time.deltaTime*0.009f*courrentSpeed;
             }
         }
         else
         {
             float courrentSpeed = Clicker.Speed;
-            Healbar.fillAmount -=Time.deltaTime*0.1f*courrentSpeed;
+            Healbar.fillAmount -=Time.deltaTime*0.009f*courrentSpeed;
         }
 
         

@@ -18,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private BrainHeats Damage;
     [SerializeField] private ClicksBank _clicksBank;
     [SerializeField] public Image ScinChnge;
+    [SerializeField] public Sprite Brain;
     //public  Animation  anim ;
     
 
@@ -69,6 +70,7 @@ public class EnemyDamage : MonoBehaviour
             
             
             EnemyBar.fillAmount = 1f;
+            //EnemyBar.sprite = Brain;
         }
         
 
