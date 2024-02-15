@@ -8,5 +8,6 @@ public class Exit : MonoBehaviour
     public void ScriptExit()
     {
         Application.Quit();
+       
     }
 }
