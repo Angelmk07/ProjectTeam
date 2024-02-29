@@ -22,6 +22,8 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private Button Isactiv;
     [SerializeField] private TextMeshProUGUI NewExp;
     [SerializeField] private GameObject NewExpHiBy;
+    [SerializeField] private Slider EnemyBar_S;
+
     //public  Animation  anim ;
     
 
@@ -34,11 +36,11 @@ public class EnemyDamage : MonoBehaviour
         {
             ScinChnge.color = Color.red;
             EnemyBar.fillAmount = 1f;
-
+            EnemyBar_S.value = 1f;
             DeadFirstEpizode.IsDead = false;
 
         }
-        if (EnemyBar.fillAmount == 0)
+        if (EnemyBar_S.value == 0f)
         {
 
 
@@ -51,7 +53,7 @@ public class EnemyDamage : MonoBehaviour
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
 
-
+            EnemyBar_S.value = 1f;
             EnemyBar.fillAmount = 1f;
             //EnemyBar.sprite = Brain;
         }
@@ -78,10 +80,10 @@ public class EnemyDamage : MonoBehaviour
 
 
         EnemyBar.fillAmount -= Damage.Pover;
+        EnemyBar_S.value -= Damage.Pover;
 
-        
 
-        
+
 
     }
     IEnumerator reternghost()
