@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private GameObject EndScrin;
     [SerializeField] private GameObject Cavas;
     [SerializeField] private Image HealBar_2;
+    [SerializeField] private Slider HealBarSlider;
     
     void Update()
     {
@@ -32,7 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         
-        if (Healbar.fillAmount == 0)
+        if (HealBarSlider.value == 0)
         {
             
             Time.timeScale = 0;
