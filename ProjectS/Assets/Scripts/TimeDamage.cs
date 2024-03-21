@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class TimeDamage : MonoBehaviour
 {
     [SerializeField] private Image Healbar;
     [SerializeField] private GameObject EndScrin;
     [SerializeField] private GameObject Cavas;
     [SerializeField] private Image HealBar_2;
-    [SerializeField] private Slider HealBarSlider;
-    
+
     void Update()
     {
         bool _IsHaveHeal = AddHealbar.IsHealHave;
@@ -20,6 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (HealBar_2.fillAmount<=0)
             {
                 Healbar.fillAmount -=Time.deltaTime*0.009f*courrentSpeed;
+
             }
             else
             {
@@ -33,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         
-        if (HealBarSlider.value == 0)
+        if (Healbar.fillAmount == 0)
         {
             
             Time.timeScale = 0;
