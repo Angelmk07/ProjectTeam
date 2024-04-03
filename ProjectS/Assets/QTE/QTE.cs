@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.EditorCoroutines.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +11,7 @@ using Random = System.Random;
 
 public class QTE : MonoBehaviour
 {
+    [SerializeField] private Image BackQTE;
     [SerializeField] private GameObject showQwe_low;
     [SerializeField] private GameObject showQwe_medium;
     [SerializeField] private GameObject showQwe_hard;
@@ -54,7 +56,10 @@ public class QTE : MonoBehaviour
 
     [SerializeField] private Image healbarcharacter;
     [SerializeField] private Slider EnemyBar_S;
-
+    public List<string> InputQTE = new List<string>();
+    public List<string> ListOfQTELow = new List<string>() {"S","S","D"};
+    List<char> ListOfQTEMedium = new List<char>() {'S','S','W','D'};
+    int a=0;
     private readonly int _time = 10;
     //private bool _timeOut = true;
     //private bool _Damage;
@@ -68,28 +73,68 @@ public class QTE : MonoBehaviour
     {
 
         coroutineQTE = StartCoroutine(StartQTE());
-            
     }
     void Update()
     {
+        
         if (_Started == true)
         {
-            if(showQwe_low.activeSelf == true)
+            
+            if (showQwe_low.activeSelf == true)
             {
-                if (Input.GetKeyDown(KeyCode.S) && TrueQTE_1_FirstLvl.color != Color.green)
-                    TrueQTE_1_FirstLvl.color = Color.green;
-                else if (Input.GetKeyDown(KeyCode.S) && TrueQTE_1_FirstLvl.color == Color.green)
-                    TrueQTE_2_FirstLvl.color = Color.green;
-                if (Input.GetKey(KeyCode.D) && TrueQTE_2_FirstLvl.color == Color.green)
-                {
-                    TrueQTE_3_FirstLvl.color = Color.green;
-                    StopCoroutine(coroutineQTE);
-                    QTE_Off();
-                    EnemyBar_S.value -= 0.2f;
-                    _Started = false;
-                    showQwe_low.SetActive(false);
-                    coroutineQTE = StartCoroutine(StartQTE());
 
+                ListInputCheck();
+
+                if (InputQTE.Count == 3)
+                {
+                    for(int i = 0; i < InputQTE.Count; i++)
+                    {
+                        if(InputQTE[i] == ListOfQTELow[i]) 
+                        {
+                            a++;
+                            
+                            continue;
+                        }
+                    }
+                    if (a == 3)
+                    {
+                        InputQTE.Clear();
+                        //BackQTE.color=Color.HSVToRGB;
+                        StopCoroutine(coroutineQTE);
+                        QTE_Off();
+                        EnemyBar_S.value -= 0.2f;
+                        _Started = false;
+                        showQwe_medium.SetActive(false);
+                        coroutineQTE = StartCoroutine(StartQTE());
+                    }
+                    else
+                    {
+                        BackQTE.color = Color.red;
+                        a = 0;
+                        InputQTE.Clear();
+                        
+                    }
+
+
+
+                }
+                {
+
+                //    if (Input.GetKeyDown(KeyCode.S) && TrueQTE_1_FirstLvl.color != Color.green)
+                //        TrueQTE_1_FirstLvl.color = Color.green;
+                //    else if (Input.GetKeyDown(KeyCode.S) && TrueQTE_1_FirstLvl.color == Color.green)
+                //        TrueQTE_2_FirstLvl.color = Color.green;
+                //    if (Input.GetKey(KeyCode.D) && TrueQTE_2_FirstLvl.color == Color.green)
+                //    {
+                //        TrueQTE_3_FirstLvl.color = Color.green;
+                //        StopCoroutine(coroutineQTE);
+                //        QTE_Off();
+                //        EnemyBar_S.value -= 0.2f;
+                //        _Started = false;
+                //        showQwe_low.SetActive(false);
+                //        coroutineQTE = StartCoroutine(StartQTE());
+
+                //    }
                 }
             }
             if (showQwe_medium.activeSelf == true)
@@ -181,7 +226,7 @@ public class QTE : MonoBehaviour
             }
 
 
-
+            BackQTE.color = Color.white;
         }
     }
 
@@ -245,10 +290,32 @@ public class QTE : MonoBehaviour
         TrueQTE_2_FirstLvl.color = color;
         TrueQTE_3_FirstLvl.color = color;
     }
+    private void ListInputCheck()
+    {
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                InputQTE.Add("S");
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                InputQTE.Add("D");
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                InputQTE.Add("A");
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                InputQTE.Add("W");
+            }
+        
+
+    }
     void changeVision(bool status)
     {
         Random random = new Random();
-        int rand = random.Next(0,4);
+        int rand = random.Next(0,1);
         switch(rand)
         {
             case 0:

@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class ParticSistem : MonoBehaviour
 {
-    public ParticleSystem ParticleSystem;
+    [SerializeField] public ParticleSystem ParticleSystem;
+    [SerializeField] public ParticleSystem particleSystemDebuff;
+    IEnumerator Start()
+    {
+        while (true)
+        {
+
+            if (ParticleSystem.particleCount >0)
+            {
+                particleSystemDebuff.Emit(1);
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
     public void onClick()
     {
         ParticleSystem.Emit(1);
     }
-    [SerializeField] public static ParticleSystem particleSystemHeal;
-    [SerializeField] public static ParticleSystem particleSystemDebuff;
 
 
-    private void Start()
-    {
-        check();
-    }
-    public static void check()
-    {
 
-        if (particleSystemHeal.isEmitting == false)
-        {
-            particleSystemDebuff.Emit(1);
-        }
-        check();
 
-    }
+
 }
