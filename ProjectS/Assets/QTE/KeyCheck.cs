@@ -19,6 +19,7 @@ public class KeyCheck
     {
         keysEnter.Clear();
         keysEnter.AddRange(keyCodes);
+        int position = 0;
     }
     public bool InputKey(KeyCode keyCode)
     {
