@@ -8,14 +8,15 @@ using Random = UnityEngine.Random;
 public class QTE_02 : MonoBehaviour
 {
     [SerializeField] Image QTEBeackGround;
+    [SerializeField] Image QTEBeackGroundFilled;
     [SerializeField] GameObject QTE1;
     [SerializeField] GameObject QTE2;
     [SerializeField] GameObject QTE3;
     [SerializeField] GameObject QTE4;
-    int i = 1;
+    int i = 0;
     bool isPass;
     float t;
-    private KeyCheck _KeyCheck;
+    private KeyCheck _KeyCheck = new KeyCheck { };
     private static KeyCode[] keyCodevalidkeys1 = new KeyCode[] { KeyCode.S, KeyCode.S, KeyCode.D };
     private static KeyCode[] keyCodevalidkeys2 = new KeyCode[] { KeyCode.S, KeyCode.S,KeyCode.W, KeyCode.D };
     private static KeyCode[] keyCodevalidkeys3 = new KeyCode[] { KeyCode.W, KeyCode.W, KeyCode.W,KeyCode.W,KeyCode.A,KeyCode.A,KeyCode.D };
@@ -24,49 +25,62 @@ public class QTE_02 : MonoBehaviour
     bool isStarted = true;
     private void Update()
     {
+
         if (isStarted)
         {
             t = Time.time;
             isPass = false;
             isStarted = false;
+            AddLvlQTE();
+            
         }
-        foreach (var key in keyCodes[i])
+        if (isStarted != true)
         {
-            _KeyCheck.InputKey(key);
-            break;
+            foreach (var key in keyCodes[i])
+            {
+                _KeyCheck.InputKey(key);
+                break;
+            }
+            QTEBeackGroundFilled.fillAmount += Time.deltaTime * 1f / 15f;
         }
-        AddLvlQTE();
-        if(Time.realtimeSinceStartup - t > 15f&& !isPass)
+
+       
+        if(Time.time - t >15f|| isPass)
         {
-            OnMisstake();
+            ShowQTE(i);
+            QTEBeackGroundFilled.fillAmount = 0;
         }
-        if (Time.realtimeSinceStartup - t > 60f )
+        if (Time.time - t > 60f )
         {
             isStarted = true;
+
+
         }
 
     }
   
     private void AddLvlQTE()
     {
-        int rnd = Random.Range(0, 5);
-        switch (rnd)
-        {
-            case 0:
-                i = 0; break;
-            case 1:
-                i = 1; break;
-            case 2:
-                i = 2; break;
-            case 3:
-                i = 3; break;
-            default:
-                throw new ArgumentException();
-        }
+        int rnd = Random.Range(0, 3);
+        //switch (rnd)
+        //{
+        //    case 0:
+        //        i = 0; break;
+        //    case 1:
+        //        i = 1; break;
+        //    case 2:
+        //        i = 2; break;
+        //    case 3:
+        //        i = 3; break;
+        //    default:
+        //        throw new ArgumentException();
+        //}
+        i = rnd;
         ShowQTE(i); 
         _KeyCheck.setOrder(keyCodes[i]);
         _KeyCheck.OnPass.AddListener(OnPass);
         _KeyCheck.OnMisstake.AddListener(OnMisstake);
+
     }
     private void OnMisstake()
     {
@@ -75,6 +89,7 @@ public class QTE_02 : MonoBehaviour
     private void OnPass()
     {
         OnPassC();
+
     }
     IEnumerator OnMisstakeC()
     {
@@ -94,16 +109,20 @@ public class QTE_02 : MonoBehaviour
         switch(i)
         {
             case 0:
-                QTE1.active = QTE1.activeSelf;
+                QTE1.SetActive(!QTE1.activeSelf);
+                QTEBeackGround.gameObject.SetActive(!QTEBeackGround.gameObject.activeSelf);
                 break;
             case 1:
-                QTE2.active = QTE2.activeSelf;
+                QTE2.SetActive(!QTE2.activeSelf);
+                QTEBeackGround.gameObject.SetActive(!QTEBeackGround.gameObject.activeSelf);
                 break;
             case 2:
-                QTE3.active = QTE3.activeSelf;
+                QTE3.SetActive(!QTE3.activeSelf);
+                QTEBeackGround.gameObject.SetActive(!QTEBeackGround.gameObject.activeSelf);
                 break;
             case 3:
-                QTE4.active = QTE4.activeSelf;
+                QTE4.SetActive(!QTE4.activeSelf);
+                QTEBeackGround.gameObject.SetActive(!QTEBeackGround.gameObject.activeSelf);
                 break;
             default:
                 break;

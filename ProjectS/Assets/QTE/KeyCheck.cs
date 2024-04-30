@@ -14,6 +14,10 @@ public class KeyCheck
     {
         keysEnter = new List<KeyCode>(keyCodes);
     }
+    public KeyCheck()
+    {
+        keysEnter = new List<KeyCode>();
+    }
 
     public void  setOrder(IEnumerable<KeyCode> keyCodes)
     {

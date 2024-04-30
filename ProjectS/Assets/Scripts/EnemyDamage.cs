@@ -14,8 +14,6 @@ public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] public AudioSource SoundPlay;
     [SerializeField] private TextMeshProUGUI _clicksBankView;
-    [SerializeField] private Image EnemyBar;
-    [SerializeField] private BrainHeats Damage;
     [SerializeField] private ClicksBank _clicksBank;
     [SerializeField] public Image ScinChnge;
     [SerializeField] public Sprite Brain;
@@ -35,18 +33,12 @@ public class EnemyDamage : MonoBehaviour
         if (IsRelead)
         {
             ScinChnge.color = Color.red;
-            EnemyBar.fillAmount = 1f;
             EnemyBar_S.value = 1f;
             DeadFirstEpizode.IsDead = false;
 
         }
-        if (EnemyBar_S.value == 0f)
+        if (EnemyBar_S.value <= 0.01f)
         {
-
-
-
-
-            //anim.Play("Dead");
             StartCoroutine("Money");
             StartCoroutine("Dead");
 
@@ -54,16 +46,11 @@ public class EnemyDamage : MonoBehaviour
             ScinChnge.color = Random.ColorHSV();
 
             EnemyBar_S.value = 1f;
-            EnemyBar.fillAmount = 1f;
-            //EnemyBar.sprite = Brain;
         }
 
     }
 
-    //private void Awake()
-    //{
-     //   anim = GetComponent<Animation>();
-    //}
+
     IEnumerator DelayedFunction(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -71,20 +58,13 @@ public class EnemyDamage : MonoBehaviour
     }
 
     public void EnemyHeatDamage()
-    { 
-       SoundPlay.Play();
-       transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
+    {
+        TwoKnifes.DoubleAttack();
+        SoundPlay.Play();
+        transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
 
         StartCoroutine("reternghost");
-
-
-
-        EnemyBar.fillAmount -= Damage.Pover;
-        EnemyBar_S.value -= Damage.Pover;
-
-
-
-
+        EnemyBar_S.value -= BrainHeats.Pover*TwoKnifes.PoverBust;
     }
     IEnumerator reternghost()
     {
@@ -111,5 +91,6 @@ public class EnemyDamage : MonoBehaviour
         NewExp.text = $"+500";
         NewExpHiBy.SetActive(false);
     }
+
 
 }
