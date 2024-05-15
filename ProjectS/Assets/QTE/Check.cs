@@ -19,6 +19,7 @@ public class Check : MonoBehaviour
     {
         if (Isstart)
         {
+            float time = Time.time;
             _background.SetActive(true);
             int randomValueNams = Random.Range(3,8);
             for (int i = 0; i < randomValueNams; i++)
@@ -44,6 +45,12 @@ public class Check : MonoBehaviour
 
             }
             
+        }
+        
+        IEnumerator NewIteration()
+        {
+            yield return new WaitForSeconds(20f);
+            Isstart = true;
         }
     }
 }
