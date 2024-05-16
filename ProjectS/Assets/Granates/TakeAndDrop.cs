@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TakeAndDrop : MonoBehaviour
+public class TakeAndDrop : MonoBehaviour, IDragHandler
 
 {
     public Vector3 place;
@@ -22,27 +22,23 @@ public class TakeAndDrop : MonoBehaviour
     {
 
     }
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButton(0) )
-        {
-            Vector2 Poscursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector3(Poscursor.x,Poscursor.y,0);
-        }
-        else
-        {
-            //transform.position = place;
-        }
-        Debug.Log("Moving");
-        if (Input.GetMouseButtonUp(0) && IsDeploing)
-        {
+    //private void OnMouseOver()
+    //{
 
-            enemyDamage.EnemyHeatBygranade();
-            enemyDamage.InteractWhithBar -= enemyDamage.InteractWhithBar / 2;
-            IsDeploing = false;
-        }
+    //    //else
+    //    //{
+    //    //    //transform.position = place;
+    //    //}
+    //    //Debug.Log("Moving");
+    //    if (Input.GetMouseButtonUp(0) && IsDeploing)
+    //    {
 
-    }
+    //        enemyDamage.EnemyHeatBygranade();
+    //        enemyDamage.InteractWhithBar -= enemyDamage.InteractWhithBar / 2;
+    //        IsDeploing = false;
+    //    }
+
+    //}
     private void OnMouseExit()
     {
         if (!IsOntarget)
@@ -53,5 +49,12 @@ public class TakeAndDrop : MonoBehaviour
         
     }
 
-
+    public void OnDrag(PointerEventData eventData)
+    {
+        Vector2 Poscursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(Poscursor.x, Poscursor.y, 0);
+        Vector3 vector = transform.localPosition;
+        vector.z = 0;
+        transform.localPosition = vector;
+    }
 }
