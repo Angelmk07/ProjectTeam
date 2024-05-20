@@ -5,7 +5,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+<<<<<<< Updated upstream
 public class TakeAndDrop : MonoBehaviour, IDragHandler
+=======
+public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
+>>>>>>> Stashed changes
 
 {
     public Vector3 place;
@@ -14,10 +18,15 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler
     internal static bool IsOntarget;
     internal bool IsStay;
     EnemyDamage enemyDamage = new EnemyDamage();
+<<<<<<< Updated upstream
+=======
+    Explosion Explosion = new Explosion();
+>>>>>>> Stashed changes
     private void Start()
     {
         place = gameObject.transform.position;
     }
+<<<<<<< Updated upstream
     private void Update()
     {
 
@@ -48,6 +57,11 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler
         }
         
     }
+=======
+
+
+
+>>>>>>> Stashed changes
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -56,5 +70,28 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler
         Vector3 vector = transform.localPosition;
         vector.z = 0;
         transform.localPosition = vector;
+<<<<<<< Updated upstream
+=======
+
+        if (Input.GetMouseButtonUp(0) && IsDeploing)
+        {
+            Explosion.ExploreTipe();
+
+            IsDeploing = false;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (!IsOntarget)
+        {
+            transform.position = place;
+
+        }
+    }
+    private void OnBecameInvisible()
+    {
+        transform.position = place;
+>>>>>>> Stashed changes
     }
 }

@@ -14,6 +14,7 @@ public class CheckTipeOfGranade : MonoBehaviour
         {
             TakeAndDrop.IsOntarget = true;
         }
+<<<<<<< Updated upstream
         Debug.Log("Boom");
     }
 
@@ -26,4 +27,20 @@ public class CheckTipeOfGranade : MonoBehaviour
         Debug.Log("Boom");
     }
 
+=======
+        Debug.Log("BoomIn");
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == ("Explosive"))
+        {
+            TakeAndDrop.IsOntarget = false;
+        }
+        Debug.Log("BoomOut");
+    }
+
+
+>>>>>>> Stashed changes
 }
