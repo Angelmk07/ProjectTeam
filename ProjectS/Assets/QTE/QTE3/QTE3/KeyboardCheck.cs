@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyboardCheck : MonoBehaviour
 {
     bool IsProces;
-    AddQte key;
+    AddQte key = new AddQte();
     List<int> keyInput = new List<int>();
     int i = 0;
     Event _event = new Event();
@@ -34,19 +34,14 @@ public class KeyboardCheck : MonoBehaviour
                 keyInput.Add(3);
             }
 
-            if (keyInput[i] == key.position[i])
-            {
 
-            }
-            else if (i == key.position.Count)
-            {
-                _event.OnPass();
-            }
-            else
-            {
+                _event.OnPass(keyInput, key.position);
+            
+           
+            
                 keyInput.Clear();
                 i = 0;
-            }
+            
         }
     }
     
