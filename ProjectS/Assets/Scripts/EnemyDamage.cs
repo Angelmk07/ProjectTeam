@@ -22,10 +22,11 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private GameObject NewExpHiBy;
     [SerializeField] private Slider EnemyBar_S;
 
-    //public  Animation  anim ;
-    
+    public float InteractWhithBar {  get => EnemyBar_S.value;  set=> EnemyBar_S.value = value; }
 
-    
+
+
+
 
     void Update()
     {
@@ -65,6 +66,14 @@ public class EnemyDamage : MonoBehaviour
 
         StartCoroutine("reternghost");
         EnemyBar_S.value -= BrainHeats.Pover*TwoKnifes.PoverBust;
+    }
+    public void EnemyHeatBygranade()
+    {
+        TwoKnifes.DoubleAttack();
+        SoundPlay.Play();
+        transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
+
+        StartCoroutine("reternghost");
     }
     IEnumerator reternghost()
     {
