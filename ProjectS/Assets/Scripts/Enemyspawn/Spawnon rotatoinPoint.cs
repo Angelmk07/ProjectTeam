@@ -21,5 +21,6 @@ public class SpawnonrotatoinPoint : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ));
         Instantiate(prefab, spawnPosition, Quaternion.identity);
+
     }
 }

@@ -8,28 +8,39 @@ public class FlyingEnemy : MonoBehaviour
     public Transform pointdown;
     public Transform pointleft;
     public Transform pointright;
+    public Transform Center;
     public Transform Rotate;
 
     public GameObject Prefub;
-    void Update()
+    public void CriateFlyingEnemy()
     {
         Rotate.rotation *= Quaternion.Euler(0,0,2 * Time.deltaTime);
 
         if (pointup.parent ==null)
         {
-            Instantiate(Prefub, pointup.position, pointup.rotation);
+            GameObject gameObjectCriate = Instantiate(Prefub,new Vector2( Random.Range( pointup.position.x,pointleft.position.x), Random.Range(pointup.position.y, pointleft.position.y)), pointup.rotation);
+            gameObjectCriate.transform.parent = pointup.transform;
         }
         else if (pointdown.parent == null)
         {
-            Instantiate(Prefub, pointup.position, pointup.rotation);
+            GameObject gameObjectCriate = Instantiate(Prefub, new Vector2(Random.Range(pointup.position.x, pointright.position.x), Random.Range(pointup.position.y, pointright.position.y)), pointup.rotation);
+            gameObjectCriate.transform.parent = pointdown.transform;
         }
         else if (pointleft.parent == null)
         {
-            Instantiate(Prefub, pointup.position, pointup.rotation);
+            GameObject gameObjectCriate = Instantiate(Prefub, new Vector2(Random.Range(pointdown.position.x, pointright.position.x), Random.Range(pointdown.position.y, pointright.position.y)), pointup.rotation);
+            gameObjectCriate.transform.parent = pointleft.transform;
         }
         else if (pointright.parent == null)
         {
-            Instantiate(Prefub, pointup.position, pointup.rotation);
+            GameObject gameObjectCriate = Instantiate(Prefub, new Vector2(Random.Range(pointdown.position.x, pointleft.position.x), Random.Range(pointdown.position.y, pointleft.position.y)), pointup.rotation);
+            gameObjectCriate.transform.parent = pointright.transform;
         }
+        else if (gameObject.transform.parent == null)
+        {
+            GameObject gameObjectCriate = Instantiate(Prefub, new Vector2(Random.Range(pointdown.position.x, pointup.position.x), Random.Range(pointdown.position.y, pointup.position.y)), pointup.rotation);
+            gameObjectCriate.transform.parent = gameObject.transform;
+        }
+
     }
 }

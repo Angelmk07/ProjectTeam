@@ -13,15 +13,21 @@ using DG.Tweening;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] public AudioSource SoundPlay;
-    [SerializeField] private TextMeshProUGUI _clicksBankView;
-    [SerializeField] private ClicksBank _clicksBank;
+    [SerializeField] private TextMeshProUGUI _clicksBankView ;
+    [SerializeField] private ClicksBank _clicksBank ;
     [SerializeField] public Image ScinChnge;
     [SerializeField] public Sprite Brain;
     [SerializeField] private Button Isactiv;
-    [SerializeField] private TextMeshProUGUI NewExp;
-    [SerializeField] private GameObject NewExpHiBy;
+    [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
 
+    private void Start()
+    {
+        NewExpHiBy = GameObject.Find("Scoreadd");
+        _clicksBank = GameObject.Find("BankSystem").GetComponent<ClicksBank>();
+        _clicksBankView = GameObject.Find("Bank").GetComponent<TextMeshProUGUI>();
+        SoundPlay = GameObject.Find("SoundSystem").GetComponent<AudioSource>();
+    }
     public float InteractWhithBar {  get => EnemyBar_S.value;  set=> EnemyBar_S.value = value; }
 
 
@@ -84,7 +90,7 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Dead()
     {
         Isactiv.interactable = false;
-        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Full);
+        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
         yield return new WaitForSeconds(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
@@ -97,7 +103,7 @@ public class EnemyDamage : MonoBehaviour
         _clicksBank.Clicks += 500;
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
-        NewExp.text = $"+500";
+        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";
         NewExpHiBy.SetActive(false);
     }
 
