@@ -20,6 +20,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private Button Isactiv;
     [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
+    private bool IsKiled=false;
 
     private void Start()
     {
@@ -44,11 +45,11 @@ public class EnemyDamage : MonoBehaviour
             DeadFirstEpizode.IsDead = false;
 
         }
-        if (EnemyBar_S.value <= 0.01f)
+        if (EnemyBar_S.value <= 0.01f && !IsKiled)
         {
             //StartCoroutine(Money());
             StartCoroutine(DeadFulldying());
-
+            IsKiled = true;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
 

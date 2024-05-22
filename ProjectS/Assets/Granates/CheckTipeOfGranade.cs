@@ -8,6 +8,7 @@ public class CheckTipeOfGranade : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) && collision.tag == ("Explosive")&&collision.name == "ExplosiveGranade")
         {
+
             TakeAndDrop.IsDeploingExplosiv = true;
         }
         else if (Input.GetMouseButtonUp(0)&& collision.tag == ("Explosive")&&collision.name == "FireGranade")
@@ -19,7 +20,6 @@ public class CheckTipeOfGranade : MonoBehaviour
             TakeAndDrop.IsOntarget = true;
             TakeAndDrop.HittenObj = gameObject;
         }
-        Debug.Log("Boom");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

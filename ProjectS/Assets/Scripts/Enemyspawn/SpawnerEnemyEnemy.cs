@@ -7,16 +7,24 @@ public class SpawnerEnemyEnemy : MonoBehaviour
 {
     public Transform posForSpwn;
     [SerializeField] private GameObject prefubSpawnObj;
+    float timeToSpawn;
 
-
-    public void OnBecameVisible()
+    private void Start()
     {
-        StartCoroutine(Spawn());
+        timeToSpawn = Time.time;
     }
-    IEnumerator Spawn()
+    private void Update()
     {
-        yield return new  WaitForSeconds(6f);
+        if(Time.time - timeToSpawn > 6)
+        {
+            Spawn();
+            timeToSpawn = Time.time;
+        }
+
+    }
+    void Spawn()
+    {
         ForEnemy.SpawnInBox(prefubSpawnObj);
-        Spawn();
+        
     }
 }

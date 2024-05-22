@@ -9,12 +9,26 @@ public class FlyingEnemy : MonoBehaviour
     public Transform pointleft;
     public Transform pointright;
     public Transform Center;
-    public Transform Rotate;
 
     public GameObject Prefub;
+    float timetoCriateFlyingEnemy;
+    private void Start()
+    {
+        timetoCriateFlyingEnemy = Time.time;
+    }
+    private void Update()
+    {
+        if (Time.time - timetoCriateFlyingEnemy >4) 
+        {
+            CriateFlyingEnemy();
+            timetoCriateFlyingEnemy = Time.time;
+        }
+
+        
+    }
     public void CriateFlyingEnemy()
     {
-        Rotate.rotation *= Quaternion.Euler(0,0,2 * Time.deltaTime);
+        transform.rotation *= Quaternion.Euler(0,0,2 * Time.deltaTime);
 
         if (pointup.parent ==null)
         {

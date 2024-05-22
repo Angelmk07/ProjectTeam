@@ -29,11 +29,13 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
             ExplosionG.ExploreGranade(HittenObj);
             IsDeploingExplosiv = false;
+            returnobj();
         }
         if (IsDeploingFire)
         {
             FireG.DeploingFire();
             IsDeploingFire = false;
+            returnobj();
 
         }
     }
@@ -47,11 +49,17 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         transform.localPosition = vector;
 
     }
-
+    public void returnobj()
+    {
+        transform.position = place;
+    }
     public void OnEndDrag(PointerEventData eventData)
     {
+            if(!IsOntarget)
+            {
+                transform.position = place;
 
-            transform.position = place;
+            }
 
         
 

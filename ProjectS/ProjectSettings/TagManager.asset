@@ -8,6 +8,9 @@ TagManager:
   - Explosive
   - GroundEnemy
   - Flying
+  - SpawnPoint1
+  - SpawnPoint2
+  - GamePlaces
   layers:
   - Default
   - TransparentFX
