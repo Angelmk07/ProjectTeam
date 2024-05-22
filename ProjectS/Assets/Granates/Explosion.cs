@@ -27,10 +27,10 @@ public class Explosion : MonoBehaviour
 
 
     }
-    public void ExploreGranade()
+    public void ExploreGranade(GameObject gameObject)
     {
-        enemyDamage.EnemyHeatBygranade();
-        enemyDamage.InteractWhithBar -= enemyDamage.InteractWhithBar / 2;
+        gameObject.GetComponent<EnemyDamage>().EnemyHeatBygranade();
+        gameObject.GetComponent<EnemyDamage>().InteractWhithBar -= gameObject.GetComponent<EnemyDamage>().InteractWhithBar / 2;
 
     }
 

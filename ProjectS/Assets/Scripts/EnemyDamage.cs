@@ -46,13 +46,13 @@ public class EnemyDamage : MonoBehaviour
         }
         if (EnemyBar_S.value <= 0.01f)
         {
-            StartCoroutine("Money");
-            StartCoroutine("Dead");
+            //StartCoroutine(Money());
+            StartCoroutine(DeadFulldying());
 
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
 
-            EnemyBar_S.value = 1f;
+            //EnemyBar_S.value = 1f;
         }
 
     }
@@ -95,6 +95,18 @@ public class EnemyDamage : MonoBehaviour
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
         Isactiv.interactable = true;
+
+    }
+    IEnumerator DeadFulldying()
+    {
+        StartCoroutine(Money());
+        Isactiv.interactable = false;
+        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
+        yield return new WaitForSeconds(1.5f);
+        transform.DORotateQuaternion(Quaternion.identity, 1f);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
 
     }
     IEnumerator Money()

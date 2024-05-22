@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpawnerEnemyEnemy : MonoBehaviour
 {
     public Transform posForSpwn;
-    private SpawnonrotatoinPoint spawnonrotatoin;
+    [SerializeField] private GameObject prefubSpawnObj;
 
 
     public void OnBecameVisible()
@@ -16,7 +16,7 @@ public class SpawnerEnemyEnemy : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new  WaitForSeconds(6f);
-        spawnonrotatoin.SpawnObject();
+        ForEnemy.SpawnInBox(prefubSpawnObj);
         Spawn();
     }
 }

@@ -17,19 +17,20 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     EnemyDamage enemyDamage = new EnemyDamage();
     FireG FireG = new FireG();
     Explosion ExplosionG = new Explosion();
+    internal static GameObject HittenObj;
     private void Start()
     {
         place = gameObject.transform.position;
     }
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0) && IsDeploingExplosiv)
+        if (IsDeploingExplosiv)
         {
 
-            ExplosionG.ExploreGranade();
+            ExplosionG.ExploreGranade(HittenObj);
             IsDeploingExplosiv = false;
         }
-        if (Input.GetMouseButtonUp(0) && IsDeploingFire)
+        if (IsDeploingFire)
         {
             FireG.DeploingFire();
             IsDeploingFire = false;

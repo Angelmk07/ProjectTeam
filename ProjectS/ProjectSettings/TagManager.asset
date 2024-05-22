@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Character
   - Explosive
+  - GroundEnemy
+  - Flying
   layers:
   - Default
   - TransparentFX

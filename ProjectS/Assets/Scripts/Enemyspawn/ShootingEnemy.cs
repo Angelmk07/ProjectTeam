@@ -9,7 +9,7 @@ public class ShootingEnemy : MonoBehaviour
     [SerializeField] private GameObject BulletPref;
     [SerializeField] private GameObject BrainPos ;
     float timeWait;
-    float SpeedBullet = 0.01f;
+    float SpeedBullet = 0.9f;
     private void Start()
     {
         BrainPos = GameObject.Find("Brain");

@@ -17,17 +17,18 @@ public class CheckTipeOfGranade : MonoBehaviour
         if (collision.tag == ("Explosive"))
         {
             TakeAndDrop.IsOntarget = true;
+            TakeAndDrop.HittenObj = gameObject;
         }
         Debug.Log("Boom");
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.tag == ("Explosive"))
+        if (collision.tag == ("Explosive"))
         {
             TakeAndDrop.IsOntarget = false;
+  
         }
-        Debug.Log("Boom");
     }
 
 }
