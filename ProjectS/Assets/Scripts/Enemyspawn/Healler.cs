@@ -29,7 +29,7 @@ public class Healler : MonoBehaviour
             if (array[i].GetComponent<EnemyDamage>().InteractWhithBar > 0)
             {
                 gameObject.GetComponent<Button>().interactable = false;
-                return;
+                break;
             }
             else
             {
@@ -53,6 +53,7 @@ public class Healler : MonoBehaviour
         foreach (GameObject obj in objectsWithTag2)
         {
             obj.GetComponent<EnemyDamage>().InteractWhithBar += 0.5f;
+
         }
     }
 
