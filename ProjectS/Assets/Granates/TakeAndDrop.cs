@@ -14,7 +14,6 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     internal static bool IsDeploingFire;
     internal static bool IsOntarget;
     internal bool IsStay;
-    EnemyDamage enemyDamage = new EnemyDamage();
     FireG FireG = new FireG();
     Explosion ExplosionG = new Explosion();
     internal static GameObject HittenObj;

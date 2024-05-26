@@ -11,6 +11,8 @@ TagManager:
   - SpawnPoint1
   - SpawnPoint2
   - GamePlaces
+  - GamePlacesDefence
+  - TryToSpawnChecker
   layers:
   - Default
   - TransparentFX
