@@ -6,12 +6,15 @@ public class ForEnemy : MonoBehaviour
 {
     [SerializeField] private static GameObject leftdownpoint;
     [SerializeField] private static GameObject rightuppoint;
+    [SerializeField] private static GameObject leftdownpointNotSpawn;
+    [SerializeField] private static GameObject rightuppointNotSpawn;
     [SerializeField] private GameObject PrefubOf;
     [SerializeField] private static GameObject Canvas;
     [SerializeField] private static GameObject CanvasDefence;
     [SerializeField] private static GameObject PrefubChecker;
-    static bool can_spawn;
-
+    internal static bool can_spawn;
+    static float PosX;
+    static float PosY;
     //float X = Mathf.Min(leftdownpoint.transform.position.x, rightuppoint.transform.position.x);
     //float Y = Mathf.Min(leftdownpoint.transform.position.y, rightuppoint.transform.position.y);
     private void Start()
@@ -24,7 +27,7 @@ public class ForEnemy : MonoBehaviour
     }
     public static GameObject SpawnInBox(GameObject Prefub)
     {
-        while (can_spawn)
+        while (!can_spawn)
         {
             IsConflicted();
         }
@@ -32,22 +35,39 @@ public class ForEnemy : MonoBehaviour
 
         if (GameManager.GameMod==0)
         {
-            return Instantiate(Prefub, new Vector2(Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x),
-             Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y)), Prefub.transform.rotation, Canvas.transform);
+
+            PosX = Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x);
+            if (PosX> leftdownpointNotSpawn.transform.position.x && PosX < rightuppointNotSpawn.transform.position.x)
+            {
+                float yMidle = rightuppointNotSpawn.transform.position.y - leftdownpointNotSpawn.transform.position.y;
+                float yRange = (Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y - rightuppointNotSpawn.transform.position.y));
+                PosY = yRange * yMidle;
+
+            }
+            else
+            {
+                PosY = Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y);
+            }
+            
+            return Instantiate(Prefub, new Vector2(PosX,PosY), Prefub.transform.rotation, Canvas.transform);
         }
-        else
+        else 
         {
+
             return Instantiate(Prefub, new Vector2(Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x),
              Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y)), Prefub.transform.rotation, CanvasDefence.transform);
         }
+
          static void IsConflicted()
         {
             GameObject gameObjectCheck = Instantiate(PrefubChecker, new Vector2(Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x),
                   Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y)), PrefubChecker.transform.rotation, Canvas.transform);
-            //if ()
-            //{
-            //    can_spawn = true;
-            //}
+   
+            gameObjectCheck.AddComponent<CheckEnemyInsideOther>();
+            if(gameObjectCheck != null)
+            {
+                can_spawn = true;
+            }
 
         }
     }

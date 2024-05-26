@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ClicksBank : MonoBehaviour
 {
-    private int _clicks;
+    private  int _clicks;
 
-    public int Clicks
+    public  int Clicks
     {
         get => _clicks;
         set => _clicks = value;
