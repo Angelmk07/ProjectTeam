@@ -67,7 +67,11 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
         if(gameObject.name == "ExplosiveGranade")
         {
-            Instantiate(FireGanade, transform.position, FireGanade.transform.rotation, CanvasPlay.transform);
+            Instantiate(Granade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
+        }
+        if (gameObject.name == "Fire")
+        {
+            Instantiate(FireGanade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
         }
         transform.position = place;
 

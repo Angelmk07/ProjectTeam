@@ -9,8 +9,7 @@ public class PlayerPrefsSave : MonoBehaviour
     public PoverActivBust _PoverActivBust;
     private void Start()
     {
-        _ClicksBank = GameObject.Find("BankSystem").GetComponent<ClicksBank>();
-        _PoverActivBust = GameObject.Find("PoverBust").GetComponent<PoverActivBust>();
+
     }
     void Save()
     {

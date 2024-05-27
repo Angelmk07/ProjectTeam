@@ -26,7 +26,7 @@ public class Healler : MonoBehaviour
     {
         for (int i = 0; i < array.Length; i++)
         {
-            if (array[i].GetComponent<EnemyDamage>().InteractWhithBar > 0)
+            if (array[i]!= null)
             {
                 gameObject.GetComponent<Button>().interactable = false;
                 break;
@@ -35,6 +35,10 @@ public class Healler : MonoBehaviour
             {
                 gameObject.GetComponent<Button>().interactable = true;
             }
+        }
+        if(array.Length == 0)
+        {
+            gameObject.GetComponent<Button>().interactable = true;
         }
         if (Time.time-timeHeal > 2)
         {

@@ -26,7 +26,8 @@ public class FireG : MonoBehaviour
         {
             if (collision.gameObject.tag == "GroundEnemy")
             {
-                PrefubBurn.gameObject.transform.parent = collision.transform;
+              GameObject newobj =  Instantiate(PrefubBurn,collision.transform);
+                newobj.transform.localScale = new Vector3(150, 150, 170);
                 StartCoroutine(Burn(collision));
                 
             }
