@@ -47,12 +47,14 @@ public class Healler : MonoBehaviour
         GameObject[] objectsWithTag1 = GameObject.FindGameObjectsWithTag("GroundEnemy");
         foreach (GameObject obj in objectsWithTag1)
         {
-            obj.GetComponent<EnemyDamage>().InteractWhithBar += 0.5f;
+            if(obj !=null || !obj.GetComponent<EnemyDamage>().IsKiled)
+                obj.GetComponent<EnemyDamage>().InteractWhithBar += 0.5f;
         }
-        GameObject[] objectsWithTag2 = GameObject.FindGameObjectsWithTag("Flying");
-        foreach (GameObject obj in objectsWithTag2)
+            objectsWithTag1 = GameObject.FindGameObjectsWithTag("Flying");
+        foreach (GameObject obj in objectsWithTag1)
         {
-            obj.GetComponent<EnemyDamage>().InteractWhithBar += 0.5f;
+            if (obj != null || !obj.GetComponent<EnemyDamage>().IsKiled)
+                obj.GetComponent<EnemyDamage>().InteractWhithBar += 0.5f;
 
         }
     }

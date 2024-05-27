@@ -11997,8 +11997,8 @@ GameObject:
   - component: {fileID: 1233011495}
   - component: {fileID: 1233011498}
   - component: {fileID: 1233011494}
-  - component: {fileID: 1233011500}
   - component: {fileID: 1233011499}
+  - component: {fileID: 1233011500}
   m_Layer: 5
   m_Name: ExplosiveGranade
   m_TagString: Explosive
@@ -12024,7 +12024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1699.8003, y: -209.29999}
+  m_AnchoredPosition: {x: -1517, y: -209.29999}
   m_SizeDelta: {x: 237, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233011494
@@ -12186,8 +12186,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1233011500
-BoxCollider2D:
+--- !u!58 &1233011500
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12218,19 +12218,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.851551, y: -0.9703064}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.8, y: 7.2}
-    newSize: {x: 12.8, y: 7.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.4897404, y: 0}
   serializedVersion: 2
-  m_Size: {x: 151.97903, y: 165.95139}
-  m_EdgeRadius: 0
+  m_Radius: 339.8616
 --- !u!1001 &1264229171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15048,7 +15038,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19527,7 +19517,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27736515, y: 0.27736515, z: 0.27736515}
+  m_LocalScale: {x: 0.4244519, y: 0.4244519, z: 0.4244519}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
