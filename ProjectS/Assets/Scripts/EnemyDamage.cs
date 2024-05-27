@@ -21,7 +21,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
     private bool IsKiled=false;
-
+   
     private void Start()
     {
         NewExpHiBy = GameObject.Find("Scoreadd");

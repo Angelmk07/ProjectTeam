@@ -12,7 +12,7 @@ public class MovmentForSpecial : MonoBehaviour
 
         GameObject target = GameObject.FindGameObjectWithTag("Character");
        
-        if (Vector2.Distance(transform.position, target.transform.position)>700)
+        if (Vector2.Distance(target.transform.position,transform.position)> distansce)
         {
             if (target == null) return;
             gameObject.transform.position += (target.transform.position - gameObject.transform.position).normalized * Speed * Time.deltaTime;

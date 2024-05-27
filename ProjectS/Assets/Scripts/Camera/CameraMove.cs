@@ -6,10 +6,10 @@ public class CameraMove : MonoBehaviour
 {
 
     private float moveSpeed = 0.6f; 
-    public float minX = -20.5f;
-    public float maxX = 20.5f; 
-    public float minY = -11.5f; 
-    public float maxY = 11.5f; 
+    public float minX = -9.8f;
+    public float maxX = 9.8f;
+    public float minY = -4.53f;
+    public float maxY = 4.53f; 
 
     private void Update()
     {
