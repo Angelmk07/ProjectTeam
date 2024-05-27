@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 6458555764744437707}
   - component: {fileID: 6797786358404537918}
   - component: {fileID: 7886039795909552107}
-  - component: {fileID: 1195860538810224479}
+  - component: {fileID: 4079837355530091124}
   m_Layer: 5
   m_Name: EnemyLittleD
   m_TagString: Flying
@@ -144,7 +144,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5905309952468453688}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 0.0024887696, y: 0.0024887696, z: 0.0024887696}
   m_ConstrainProportionsScale: 0
@@ -406,7 +406,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1195860538810224479
+--- !u!114 &4079837355530091124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5905309952468453688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5d9af5a24e01743993bf7199ab6201, type: 3}
+  m_Script: {fileID: 11500000, guid: be61a59001ab3f14084d9963fc46b9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5

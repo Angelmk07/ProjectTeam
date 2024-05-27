@@ -24,6 +24,9 @@ public class ForEnemy : MonoBehaviour
         Canvas = GameObject.FindGameObjectWithTag("GamePlaces");
         CanvasDefence = GameObject.FindGameObjectWithTag("GamePlacesDefence");
         PrefubChecker = GameObject.FindGameObjectWithTag("TryToSpawnChecker");
+        rightuppointNotSpawn = GameObject.FindGameObjectWithTag("rightuppointNotSpawn");
+        leftdownpointNotSpawn = GameObject.FindGameObjectWithTag("leftdownpointNotSpawn");
+
     }
     public static GameObject SpawnInBox(GameObject Prefub)
     {

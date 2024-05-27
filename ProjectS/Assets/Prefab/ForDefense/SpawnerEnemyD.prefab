@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posForSpwn: {fileID: 0}
-  prefubSpawnObj: {fileID: 8401963461931527943, guid: 79c20cf426e1e354288e71016dc28680, type: 3}
+  prefubSpawnObj: {fileID: 3010012449317044833, guid: 3b5329d5cc306054cb48e1503dd582e4, type: 3}
 --- !u!50 &6688922963605075241
 Rigidbody2D:
   serializedVersion: 4

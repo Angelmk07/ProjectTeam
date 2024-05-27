@@ -9,6 +9,6 @@ public class Movment : MonoBehaviour
     {
         GameObject target = GameObject.FindGameObjectWithTag("Character");
         if (target == null) return;
-        gameObject.transform.position += (gameObject.transform.position - target.transform.position).normalized*Speed*Time.deltaTime;
+        gameObject.transform.position += (target.transform.position-gameObject.transform.position ).normalized*Speed*Time.deltaTime;
     }
 }
