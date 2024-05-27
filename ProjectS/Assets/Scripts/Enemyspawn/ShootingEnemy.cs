@@ -27,8 +27,5 @@ public class ShootingEnemy : MonoBehaviour
 
         
     }
-    public void Spawn()
-    {
-        GameObject gameObject = ForEnemy.SpawnInBox(prefub);
-    }
+
 }

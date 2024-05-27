@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private ClicksBank Exp;
+    //[SerializeField] private ClicksBank Exp;
 
     EnemyDamage enemyDamage = new EnemyDamage();
 
@@ -15,23 +15,31 @@ public class Explosion : MonoBehaviour
 
 
 
-    public void Start()
-    {
-        if ((Exp.Clicks - cost) > 0&& cancelebuy)
-        {
+    //public void Start()
+    //{
+    //    if ((Exp.Clicks - cost) > 0&& cancelebuy)
+    //    {
 
             
-            Exp.Clicks -= cost;
-            cancelebuy = false;
-        }
+    //        Exp.Clicks -= cost;
+    //        cancelebuy = false;
+    //    }
 
 
-    }
-    public void ExploreGranade(GameObject gameObject)
+    //}
+
+    public void ExploreGranade()
     {
         gameObject.GetComponent<EnemyDamage>().EnemyHeatBygranade();
         gameObject.GetComponent<EnemyDamage>().InteractWhithBar -= gameObject.GetComponent<EnemyDamage>().InteractWhithBar / 2;
 
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "GroundEnemy"|| collision.gameObject.tag == "Flying")
+        {
+            collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.5f;
+        }
+    }
+    
 }

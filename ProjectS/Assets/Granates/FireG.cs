@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class FireG : MonoBehaviour
 {
-    public void DeploingFire()
+    [SerializeField] private GameObject PrefubBurn;
+    int firetime=5;
+
+    IEnumerator Burn(Collider2D collision)
     {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("GroundEnemy");
-        foreach (GameObject obj in objectsWithTag)
+
+
+        for (int i = 0; i < firetime; i++)
         {
-            obj.GetComponent<EnemyDamage>().InteractWhithBar -= 0.1f;
+            collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.2f;
+            yield return new WaitForSecondsRealtime(0.2f);
         }
+        
+ 
+
+
     }
-    IEnumerator Burn(GameObject[] objectsWithTag)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        for (int i = 0; i < objectsWithTag.Length; i++)
         {
-            foreach (GameObject obj in objectsWithTag)
+            if (collision.gameObject.tag == "GroundEnemy")
             {
-                obj.GetComponent<EnemyDamage>().InteractWhithBar -= 0.1f;
+                PrefubBurn.gameObject.transform.parent = collision.transform;
+                StartCoroutine(Burn(collision));
+                
             }
-            yield return new WaitForSeconds(0.5f);
         }
-
-
     }
-
 }

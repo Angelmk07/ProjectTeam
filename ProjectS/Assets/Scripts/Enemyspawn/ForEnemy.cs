@@ -23,13 +23,13 @@ public class ForEnemy : MonoBehaviour
         rightuppoint = GameObject.FindGameObjectWithTag("SpawnPoint2");
         Canvas = GameObject.FindGameObjectWithTag("GamePlaces");
         CanvasDefence = GameObject.FindGameObjectWithTag("GamePlacesDefence");
-        PrefubChecker = GameObject.FindGameObjectWithTag("TryToSpawnChecker");
         rightuppointNotSpawn = GameObject.FindGameObjectWithTag("rightuppointNotSpawn");
         leftdownpointNotSpawn = GameObject.FindGameObjectWithTag("leftdownpointNotSpawn");
-
+        PrefubChecker = GameObject.FindGameObjectWithTag("TryToSpawnChecker");
     }
     public static GameObject SpawnInBox(GameObject Prefub)
     {
+
         while (!can_spawn)
         {
             IsConflicted();
@@ -51,8 +51,10 @@ public class ForEnemy : MonoBehaviour
             {
                 PosY = Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y);
             }
-            
-            return Instantiate(Prefub, new Vector2(PosX,PosY), Prefub.transform.rotation, Canvas.transform);
+            GameObject newObject = Instantiate(Prefub, new Vector2(PosX, PosY), Quaternion.identity, Canvas.transform);
+             newObject.transform.localScale = new Vector3(1, 1, 1);
+            return newObject;
+
         }
         else 
         {

@@ -14,30 +14,42 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     internal static bool IsDeploingFire;
     internal static bool IsOntarget;
     internal bool IsStay;
-    FireG FireG = new FireG();
-    Explosion ExplosionG = new Explosion();
-    internal static GameObject HittenObj;
+    [SerializeField] private GameObject Granade;
+    [SerializeField] private GameObject FireGanade;
+    [SerializeField] private GameObject CanvasPlay;
+    
+    //FireG FireG = new FireG();
+    //Explosion ExplosionG = new Explosion();
+
     private void Start()
     {
         place = gameObject.transform.position;
-    }
-    private void Update()
-    {
-        if (IsDeploingExplosiv)
+        if (PlayerPrefs.GetInt("GameMod") == 0)
         {
-
-            ExplosionG.ExploreGranade(HittenObj);
-            IsDeploingExplosiv = false;
-            returnobj();
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlaces");
         }
-        if (IsDeploingFire)
+        else
         {
-            FireG.DeploingFire();
-            IsDeploingFire = false;
-            returnobj();
-
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlacesDefend");
         }
     }
+    //private void Update()
+    //{
+    //    if (IsDeploingExplosiv)
+    //    {
+
+    //        ExplosionG.ExploreGranade();
+    //        IsDeploingExplosiv = false;
+
+    //    }
+    //    if (IsDeploingFire)
+    //    {
+    //        FireG.DeploingFire();
+    //        IsDeploingFire = false;
+
+
+    //    }
+    //}
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -48,19 +60,18 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         transform.localPosition = vector;
 
     }
-    public void returnobj()
-    {
-        transform.position = place;
-    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
-            if(!IsOntarget)
-            {
-                transform.position = place;
 
-            }
 
-        
+        if(gameObject.name == "ExplosiveGranade")
+        {
+            Instantiate(FireGanade, transform.position, FireGanade.transform.rotation, CanvasPlay.transform);
+        }
+        transform.position = place;
+
+
 
     }
 }

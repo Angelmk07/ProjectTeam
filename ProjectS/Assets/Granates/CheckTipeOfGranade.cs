@@ -18,7 +18,6 @@ public class CheckTipeOfGranade : MonoBehaviour
         if (collision.tag == ("Explosive"))
         {
             TakeAndDrop.IsOntarget = true;
-            TakeAndDrop.HittenObj = gameObject;
         }
     }
 

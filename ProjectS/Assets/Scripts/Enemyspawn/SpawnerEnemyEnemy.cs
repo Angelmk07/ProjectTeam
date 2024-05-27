@@ -7,6 +7,7 @@ public class SpawnerEnemyEnemy : MonoBehaviour
 {
     public Transform posForSpwn;
     [SerializeField] private GameObject prefubSpawnObj;
+
     float timeToSpawn;
 
     private void Start()
