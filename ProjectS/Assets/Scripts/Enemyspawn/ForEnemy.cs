@@ -12,7 +12,7 @@ public class ForEnemy : MonoBehaviour
     [SerializeField] private static GameObject Canvas;
     [SerializeField] private static GameObject CanvasDefence;
     [SerializeField] private static GameObject PrefubChecker;
-    internal static bool can_spawn;
+    internal static bool can_spawn = false;
     static float PosX;
     static float PosY;
     //float X = Mathf.Min(leftdownpoint.transform.position.x, rightuppoint.transform.position.x);
@@ -36,7 +36,7 @@ public class ForEnemy : MonoBehaviour
         }
         can_spawn = false;
 
-        if (GameManager.GameMod==0)
+        if (GameManager.GameMod==1)
         {
 
             PosX = Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x);

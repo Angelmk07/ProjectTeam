@@ -6,10 +6,11 @@ public class CheckIsEnemyOnBrain : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "GroundEnemy"||collision.tag =="Flying")
+        if (collision.gameObject.tag == "GroundEnemy"|| collision.gameObject.tag =="Flying")
         {
-            Destroy(collision);
             InteractWhisPLayerBar.ChangeBar(-EnemyPower.EnemyStrength);
+            Destroy(collision.gameObject);
+
         }
     }
 }

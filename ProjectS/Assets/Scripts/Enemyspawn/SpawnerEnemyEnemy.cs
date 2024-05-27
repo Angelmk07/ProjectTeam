@@ -24,7 +24,7 @@ public class SpawnerEnemyEnemy : MonoBehaviour
     }
     void Spawn()
     {
-        ForEnemy.SpawnInBox(prefubSpawnObj);
+       GameObject gameObject = ForEnemy.SpawnInBox(prefubSpawnObj);
         
     }
 }

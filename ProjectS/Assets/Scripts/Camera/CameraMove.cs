@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
 
-    private float moveSpeed = 0.6f; 
-    public float minX = -9.8f;
-    public float maxX = 9.8f;
-    public float minY = -4.53f;
-    public float maxY = 4.53f; 
+    private float moveSpeed = 0.6f;
+    private float minX = -8f;
+    private float maxX = 8f;
+    private float minY = -4.53f;
+    private float maxY = 4.53f; 
 
     private void Update()
     {
