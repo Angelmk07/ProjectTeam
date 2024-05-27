@@ -6,41 +6,28 @@ public class CheckTipeOfGranade : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetMouseButtonUp(0) && collision.tag == ("Explosive"))
+        if (Input.GetMouseButtonUp(0) && collision.tag == ("Explosive")&&collision.name == "ExplosiveGranade")
         {
-            TakeAndDrop.IsDeploing = true;
+
+            TakeAndDrop.IsDeploingExplosiv = true;
+        }
+        else if (Input.GetMouseButtonUp(0)&& collision.tag == ("Explosive")&&collision.name == "FireGranade")
+        {
+            TakeAndDrop.IsDeploingFire = true;
         }
         if (collision.tag == ("Explosive"))
         {
             TakeAndDrop.IsOntarget = true;
         }
-<<<<<<< Updated upstream
-        Debug.Log("Boom");
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == ("Explosive"))
-        {
-            TakeAndDrop.IsOntarget = false;
-        }
-        Debug.Log("Boom");
-    }
-
-=======
-        Debug.Log("BoomIn");
-    }
-
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == ("Explosive"))
         {
             TakeAndDrop.IsOntarget = false;
+  
         }
-        Debug.Log("BoomOut");
     }
 
-
->>>>>>> Stashed changes
 }

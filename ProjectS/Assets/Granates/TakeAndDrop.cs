@@ -5,63 +5,51 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-<<<<<<< Updated upstream
-public class TakeAndDrop : MonoBehaviour, IDragHandler
-=======
 public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
->>>>>>> Stashed changes
 
 {
     public Vector3 place;
 
-    internal static bool IsDeploing;
+    internal static bool IsDeploingExplosiv;
+    internal static bool IsDeploingFire;
     internal static bool IsOntarget;
     internal bool IsStay;
-    EnemyDamage enemyDamage = new EnemyDamage();
-<<<<<<< Updated upstream
-=======
-    Explosion Explosion = new Explosion();
->>>>>>> Stashed changes
+    [SerializeField] private GameObject Granade;
+    [SerializeField] private GameObject FireGanade;
+    [SerializeField] private GameObject CanvasPlay;
+    
+    //FireG FireG = new FireG();
+    //Explosion ExplosionG = new Explosion();
+
     private void Start()
     {
         place = gameObject.transform.position;
+        if (PlayerPrefs.GetInt("GameMod") == 0)
+        {
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlaces");
+        }
+        else
+        {
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlacesDefend");
+        }
     }
-<<<<<<< Updated upstream
-    private void Update()
-    {
-
-    }
-    //private void OnMouseOver()
+    //private void Update()
     //{
-
-    //    //else
-    //    //{
-    //    //    //transform.position = place;
-    //    //}
-    //    //Debug.Log("Moving");
-    //    if (Input.GetMouseButtonUp(0) && IsDeploing)
+    //    if (IsDeploingExplosiv)
     //    {
 
-    //        enemyDamage.EnemyHeatBygranade();
-    //        enemyDamage.InteractWhithBar -= enemyDamage.InteractWhithBar / 2;
-    //        IsDeploing = false;
+    //        ExplosionG.ExploreGranade();
+    //        IsDeploingExplosiv = false;
+
     //    }
+    //    if (IsDeploingFire)
+    //    {
+    //        FireG.DeploingFire();
+    //        IsDeploingFire = false;
 
+
+    //    }
     //}
-    private void OnMouseExit()
-    {
-        if (!IsOntarget)
-        { 
-            //transform.position = place;
-
-        }
-        
-    }
-=======
-
-
-
->>>>>>> Stashed changes
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -70,28 +58,24 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         Vector3 vector = transform.localPosition;
         vector.z = 0;
         transform.localPosition = vector;
-<<<<<<< Updated upstream
-=======
 
-        if (Input.GetMouseButtonUp(0) && IsDeploing)
-        {
-            Explosion.ExploreTipe();
-
-            IsDeploing = false;
-        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!IsOntarget)
-        {
-            transform.position = place;
 
+
+        if(gameObject.name == "ExplosiveGranade")
+        {
+            Instantiate(Granade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
         }
-    }
-    private void OnBecameInvisible()
-    {
+        if (gameObject.name == "Fire")
+        {
+            Instantiate(FireGanade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
+        }
         transform.position = place;
->>>>>>> Stashed changes
+
+
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AttackMoneyAdd : MonoBehaviour
 {
-    private static int _AttackPointAdd;
+    private static int _AttackPointAdd = 1;
     public static int AttackPointAdd
     {
         get { return _AttackPointAdd; }
