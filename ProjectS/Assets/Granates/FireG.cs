@@ -5,21 +5,17 @@ using UnityEngine;
 public class FireG : MonoBehaviour
 {
     [SerializeField] private GameObject PrefubBurn;
-    
-    int firetime=8*2;
+    int firetime=5;
 
     IEnumerator Burn(Collider2D collision)
     {
-        if(collision!=null)
-            for (int i = 0; i < firetime; i++)
-            {
-                if (collision != null)
-                    collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.05f;
-                else
-                    yield break;
-    
-                yield return new WaitForSecondsRealtime(0.5f);
-            }
+
+
+        for (int i = 0; i < firetime; i++)
+        {
+            collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.2f;
+            yield return new WaitForSecondsRealtime(0.2f);
+        }
         
  
 

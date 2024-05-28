@@ -7,8 +7,6 @@ public class PlayerPrefsSave : MonoBehaviour
 {
     public ClicksBank _ClicksBank;
     public PoverActivBust _PoverActivBust;
-    public AddHealbar _addHealbar;
-    
     private void Start()
     {
 
@@ -20,18 +18,6 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetInt("AttackPointOun", AttackMoneyBank.MoneyForTeam);
         PlayerPrefs.SetInt("CliksOun", _ClicksBank.Clicks);
         PlayerPrefs.SetInt("PowerOun", _PoverActivBust.stakValue);
-        if (PasivHeal.IsbuyDo)
-            PlayerPrefs.SetInt("PasivBought", 1);
-        else
-            PlayerPrefs.SetInt("PasivBought", 0);
-        PlayerPrefs.SetFloat("EnemyPower",EnemyPower.EnemyStrength);
-        if (_addHealbar.Isbuy)
-            PlayerPrefs.SetInt("PasivBought", 1);
-        else
-            PlayerPrefs.SetInt("PasivBought", 0);
-        PlayerPrefs.SetInt("LvlClicker", LvlPlayer.ClickerLvl);
-        PlayerPrefs.SetInt("LvlDefence", LvlPlayer.DefenceLvl);
-        PlayerPrefs.SetInt("LvlKnife", TwoKnifes.lvl);
         PlayerPrefs.Save();
     }
     void Load()
@@ -42,19 +28,6 @@ public class PlayerPrefsSave : MonoBehaviour
         _ClicksBank.Clicks = PlayerPrefs.GetInt("CliksOun");
         _PoverActivBust.stakValue = PlayerPrefs.GetInt("PowerOun");
 
-        if (PlayerPrefs.GetInt("PasivBought") == 1)
-            PasivHeal.IsbuyDo = true;
-        else
-            PasivHeal.IsbuyDo = false;
-
-        EnemyPower.EnemyStrength = PlayerPrefs.GetFloat("EnemyPower");
-        if (PlayerPrefs.GetInt("PasivBought") == 1)
-            _addHealbar.Isbuy = true;
-        else
-            _addHealbar.Isbuy = false;
-        LvlPlayer.ClickerLvl = PlayerPrefs.GetInt("LvlClicker");
-        LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
-        TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");
     }
 
 }

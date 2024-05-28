@@ -17,22 +17,20 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject Granade;
     [SerializeField] private GameObject FireGanade;
     [SerializeField] private GameObject CanvasPlay;
-    [SerializeField] private GameObject PlaceForExplosiv;
-    [SerializeField] private GameObject PlaceForFire;
     
     //FireG FireG = new FireG();
     //Explosion ExplosionG = new Explosion();
 
     private void Start()
     {
-
-        if (GameManager.GameMod == 1)
+        place = gameObject.transform.position;
+        if (PlayerPrefs.GetInt("GameMod") == 0)
         {
-            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlacesDefence");
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlaces");
         }
         else
         {
-            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlaces");
+            CanvasPlay = GameObject.FindGameObjectWithTag("GamePlacesDefend");
         }
     }
     //private void Update()
@@ -70,16 +68,12 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
         if(gameObject.name == "ExplosiveGranade")
         {
             Instantiate(Granade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
-            transform.position = PlaceForExplosiv.transform.position;
-            return;
         }
         if (gameObject.name == "Fire")
         {
-            
             Instantiate(FireGanade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
-            transform.position = PlaceForFire.transform.position;
         }
-
+        transform.position = place;
 
 
 

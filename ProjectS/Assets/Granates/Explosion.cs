@@ -12,7 +12,7 @@ public class Explosion : MonoBehaviour
     private bool cancelebuy = true;
     private int cost = 500;
     private float explor_pover = 10f;
-    [SerializeField] private float radius = 2;
+
 
 
     //public void Start()
@@ -20,43 +20,26 @@ public class Explosion : MonoBehaviour
     //    if ((Exp.Clicks - cost) > 0&& cancelebuy)
     //    {
 
-
+            
     //        Exp.Clicks -= cost;
     //        cancelebuy = false;
     //    }
 
 
     //}
-    private void Start()
+
+    public void ExploreGranade()
     {
-        Debug.Log("Explre");
-  
-       Collider2D[] collider2Ds =  Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach(Collider2D collider in collider2Ds)
+        gameObject.GetComponent<EnemyDamage>().EnemyHeatBygranade();
+        gameObject.GetComponent<EnemyDamage>().InteractWhithBar -= gameObject.GetComponent<EnemyDamage>().InteractWhithBar / 2;
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "GroundEnemy"|| collision.gameObject.tag == "Flying")
         {
-
-            if (collider.gameObject.tag == "GroundEnemy" || collider.gameObject.tag == "Flying")
-            {
-
-                collider.GetComponent<EnemyDamage>().InteractWhithBar -= 0.5f;
-            }
-            
+            collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.5f;
         }
     }
-    //public void ExploreGranade()
-    //{
-    //    gameObject.GetComponent<EnemyDamage>().EnemyHeatBygranade();
-    //    gameObject.GetComponent<EnemyDamage>().InteractWhithBar -= gameObject.GetComponent<EnemyDamage>().InteractWhithBar / 2;
-
-    //}
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Debug.Log("Some");
-    //    if (collision.gameObject.tag == "GroundEnemy"|| collision.gameObject.tag == "Flying")
-    //    {
-
-    //        collision.GetComponent<EnemyDamage>().InteractWhithBar -= 0.5f;
-    //    }
-    //}
     
 }

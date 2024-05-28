@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TwoKnifes : MonoBehaviour
 {
-    internal static int lvl = 0;
+    static int lvl = 0;
     static int chanse = 5;
     static public int PoverBust;
     int cost=200;
