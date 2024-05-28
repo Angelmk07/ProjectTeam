@@ -93,13 +93,14 @@ public class EnemyDamage : MonoBehaviour
     }
     IEnumerator Dead()
     {
+        StartCoroutine(Money());
         Isactiv.interactable = false;
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
         yield return new WaitForSeconds(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
         Isactiv.interactable = true;
-        EnemyBar_S.maxValue += LvlPlayer.ClickerLvl;
+        EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
         EnemyBar_S.value = EnemyBar_S.maxValue;
 
     }
@@ -118,7 +119,7 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Money()
     {
         
-        _clicksBank.Clicks += 500;
+        _clicksBank.Clicks += 50* LvlPlayer.ClickerLvlOnScreen;
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
         NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";

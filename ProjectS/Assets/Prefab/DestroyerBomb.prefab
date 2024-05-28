@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 8998814845675517031}
   - component: {fileID: 9032201115656886392}
   - component: {fileID: 3720418120203451790}
+  - component: {fileID: 5265178173970854968}
+  - component: {fileID: 3657081713865023794}
   m_Layer: 0
   m_Name: DestroyerBomb
   m_TagString: Untagged
@@ -191,3 +193,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5265178173970854968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400799464544359038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9565a733d551f8448ab09d3e03767cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroerPrefub: {fileID: 8400799464544359038}
+--- !u!114 &3657081713865023794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400799464544359038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234df940dec0982468d6bd11bd20aae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

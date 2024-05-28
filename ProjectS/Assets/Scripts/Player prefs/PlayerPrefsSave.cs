@@ -31,6 +31,7 @@ public class PlayerPrefsSave : MonoBehaviour
             PlayerPrefs.SetInt("PasivBought", 0);
         PlayerPrefs.SetInt("LvlClicker", LvlPlayer.ClickerLvl);
         PlayerPrefs.SetInt("LvlDefence", LvlPlayer.DefenceLvl);
+        PlayerPrefs.SetInt("LvlKnife", TwoKnifes.lvl);
         PlayerPrefs.Save();
     }
     void Load()
@@ -53,6 +54,7 @@ public class PlayerPrefsSave : MonoBehaviour
             _addHealbar.Isbuy = false;
         LvlPlayer.ClickerLvl = PlayerPrefs.GetInt("LvlClicker");
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
+        TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");
     }
 
 }
