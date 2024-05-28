@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 1401222041}
   - component: {fileID: 1401222040}
   - component: {fileID: 1401222039}
-  - component: {fileID: 1401222038}
+  - component: {fileID: 1401222042}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -962,18 +962,6 @@ RectTransform:
   m_AnchoredPosition: {x: 6.19, y: 168.00002}
   m_SizeDelta: {x: 342.75, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1401222038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401222036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984a035159f47d044b5a84474ef04a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1401222039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1018,9 +1006,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1401222038}
-        m_TargetAssemblyTypeName: CangeScrinToMain, Assembly-CSharp
-        m_MethodName: OpenMainScrin
+      - m_Target: {fileID: 1401222042}
+        m_TargetAssemblyTypeName: Retern, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1068,6 +1056,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401222036}
   m_CullTransparentMesh: 1
+--- !u!114 &1401222042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401222036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89852206a1307346af6ca575a04cba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1434456246
 GameObject:
   m_ObjectHideFlags: 0
