@@ -48,10 +48,7 @@ public class EnemyDamage : MonoBehaviour
         if (EnemyBar_S.value <= 0.01f && !IsKiled)
         {
             //StartCoroutine(Money());
-            if(GameManager.GameMod ==0)
-                StartCoroutine(DeadFulldying());
-            else
-                StartCoroutine(Dead());
+            StartCoroutine(DeadFulldying());
             IsKiled = true;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
@@ -93,15 +90,12 @@ public class EnemyDamage : MonoBehaviour
     }
     IEnumerator Dead()
     {
-        StartCoroutine(Money());
         Isactiv.interactable = false;
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
         yield return new WaitForSeconds(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
         Isactiv.interactable = true;
-        EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
-        EnemyBar_S.value = EnemyBar_S.maxValue;
 
     }
     IEnumerator DeadFulldying()
@@ -119,7 +113,7 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Money()
     {
         
-        _clicksBank.Clicks += 50* LvlPlayer.ClickerLvlOnScreen;
+        _clicksBank.Clicks += 500;
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
         NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";
