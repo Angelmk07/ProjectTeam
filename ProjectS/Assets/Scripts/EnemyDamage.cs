@@ -48,7 +48,10 @@ public class EnemyDamage : MonoBehaviour
         if (EnemyBar_S.value <= 0.01f && !IsKiled)
         {
             //StartCoroutine(Money());
-            StartCoroutine(DeadFulldying());
+            if(GameManager.GameMod ==0)
+                StartCoroutine(DeadFulldying());
+            else
+                StartCoroutine(Dead());
             IsKiled = true;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
@@ -96,6 +99,8 @@ public class EnemyDamage : MonoBehaviour
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
         Isactiv.interactable = true;
+        EnemyBar_S.maxValue += LvlPlayer.ClickerLvl;
+        EnemyBar_S.value = EnemyBar_S.maxValue;
 
     }
     IEnumerator DeadFulldying()
