@@ -10,6 +10,7 @@ public class ForEnemy : MonoBehaviour
     [SerializeField] private static GameObject rightuppointNotSpawn;
     [SerializeField] private GameObject PrefubOf;
     [SerializeField] private static GameObject Canvas;
+    [SerializeField] private static GameObject CanvasDef;
     [SerializeField] private static GameObject CanvasDefence;
     [SerializeField] private static GameObject PrefubChecker;
     internal static bool can_spawn = false;
@@ -22,6 +23,7 @@ public class ForEnemy : MonoBehaviour
         leftdownpoint = GameObject.FindGameObjectWithTag("SpawnPoint1");
         rightuppoint = GameObject.FindGameObjectWithTag("SpawnPoint2");
         Canvas = GameObject.FindGameObjectWithTag("GamePlaces");
+        CanvasDef = GameObject.FindGameObjectWithTag("GamePlacesDefence");
         CanvasDefence = GameObject.FindGameObjectWithTag("GamePlacesDefence");
         rightuppointNotSpawn = GameObject.FindGameObjectWithTag("rightuppointNotSpawn");
         leftdownpointNotSpawn = GameObject.FindGameObjectWithTag("leftdownpointNotSpawn");
@@ -51,7 +53,7 @@ public class ForEnemy : MonoBehaviour
             {
                 PosY = Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y);
             }
-            GameObject newObject = Instantiate(Prefub, new Vector2(PosX, PosY), Quaternion.identity, Canvas.transform);
+            GameObject newObject = Instantiate(Prefub, new Vector2(PosX, PosY), Quaternion.identity, CanvasDef.transform);
              newObject.transform.localScale = new Vector3(1, 1, 1);
             return newObject;
 
