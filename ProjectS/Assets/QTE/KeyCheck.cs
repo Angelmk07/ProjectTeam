@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class KeyCheck 
 
 {
+
     int position=0;
     public UnityEvent OnMisstake { get; } = new UnityEvent();
     public UnityEvent OnPass { get; } = new UnityEvent();

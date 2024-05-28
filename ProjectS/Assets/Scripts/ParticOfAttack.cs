@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ParticOfAttack : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _particleSystemAttack;
+    [SerializeField] private ParticleSystem _particleSystemAttack ;
     [SerializeField] private Slider EnemyBar_S;
     public void onClick()
     {

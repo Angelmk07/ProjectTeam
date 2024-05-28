@@ -231,7 +231,6 @@ public class QTE : MonoBehaviour
     }
 
 
-
     IEnumerator StartQTE()
     {
         while (true)

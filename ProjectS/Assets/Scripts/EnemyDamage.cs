@@ -13,19 +13,27 @@ using DG.Tweening;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] public AudioSource SoundPlay;
-    [SerializeField] private TextMeshProUGUI _clicksBankView;
-    [SerializeField] private ClicksBank _clicksBank;
+    [SerializeField] private TextMeshProUGUI _clicksBankView ;
+    [SerializeField] private ClicksBank _clicksBank ;
     [SerializeField] public Image ScinChnge;
     [SerializeField] public Sprite Brain;
     [SerializeField] private Button Isactiv;
-    [SerializeField] private TextMeshProUGUI NewExp;
-    [SerializeField] private GameObject NewExpHiBy;
+    [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
+    internal bool IsKiled=false;
+   
+    private void Start()
+    {
+        NewExpHiBy = GameObject.Find("Scoreadd");
+        _clicksBank = GameObject.Find("BankSystem").GetComponent<ClicksBank>();
+        _clicksBankView = GameObject.Find("Bank").GetComponent<TextMeshProUGUI>();
+        SoundPlay = GameObject.Find("SoundSystem").GetComponent<AudioSource>();
+    }
+    public float InteractWhithBar {  get => EnemyBar_S.value;  set=> EnemyBar_S.value = value; }
 
-    //public  Animation  anim ;
-    
 
-    
+
+
 
     void Update()
     {
@@ -37,15 +45,15 @@ public class EnemyDamage : MonoBehaviour
             DeadFirstEpizode.IsDead = false;
 
         }
-        if (EnemyBar_S.value <= 0.01f)
+        if (EnemyBar_S.value <= 0.01f && !IsKiled)
         {
-            StartCoroutine("Money");
-            StartCoroutine("Dead");
-
+            //StartCoroutine(Money());
+            StartCoroutine(DeadFulldying());
+            IsKiled = true;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
 
-            EnemyBar_S.value = 1f;
+            //EnemyBar_S.value = 1f;
         }
 
     }
@@ -66,6 +74,14 @@ public class EnemyDamage : MonoBehaviour
         StartCoroutine("reternghost");
         EnemyBar_S.value -= BrainHeats.Pover*TwoKnifes.PoverBust;
     }
+    public void EnemyHeatBygranade()
+    {
+        TwoKnifes.DoubleAttack();
+        SoundPlay.Play();
+        transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
+
+        StartCoroutine("reternghost");
+    }
     IEnumerator reternghost()
     {
         yield return new WaitForSeconds(3f);
@@ -75,11 +91,23 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Dead()
     {
         Isactiv.interactable = false;
-        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Full);
+        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
         yield return new WaitForSeconds(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
         yield return new WaitForSeconds(1f);
         Isactiv.interactable = true;
+
+    }
+    IEnumerator DeadFulldying()
+    {
+        StartCoroutine(Money());
+        Isactiv.interactable = false;
+        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
+        yield return new WaitForSeconds(1.5f);
+        transform.DORotateQuaternion(Quaternion.identity, 1f);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
 
     }
     IEnumerator Money()
@@ -88,7 +116,7 @@ public class EnemyDamage : MonoBehaviour
         _clicksBank.Clicks += 500;
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
-        NewExp.text = $"+500";
+        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";
         NewExpHiBy.SetActive(false);
     }
 

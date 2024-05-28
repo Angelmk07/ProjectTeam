@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ToolTipTriger : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
+    [SerializeField] private TextMeshProUGUI _toolText;
     public string tooltipmessage;
-    public ToolTip toolTip;
+    public GameObject _toolPanel;
+    
 
-   
+
     public void OnPointerEnter(PointerEventData eventData)
     {
-        toolTip.ShowToolTip(tooltipmessage);
+        _toolText.text = tooltipmessage;
+        _toolPanel.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        toolTip.HideToolTip();
+        _toolPanel.SetActive(false);
     }
 }
