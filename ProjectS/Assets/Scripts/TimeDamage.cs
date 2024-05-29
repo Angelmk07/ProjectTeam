@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeDamage : MonoBehaviour
@@ -10,6 +11,7 @@ public class TimeDamage : MonoBehaviour
     [SerializeField] private GameObject EndScrin;
     [SerializeField] private GameObject Cavas;
     [SerializeField] private Image HealBar_2;
+    [SerializeField] PlayerPrefsSave PlayerPrefsSave;
 
     void Update()
     {
@@ -36,10 +38,12 @@ public class TimeDamage : MonoBehaviour
         
         if (Healbar.fillAmount == 0)
         {
-            
+            PlayerPrefsSave = gameObject.GetComponent<PlayerPrefsSave>();
             Time.timeScale = 0;
             Cavas.SetActive(false);
             EndScrin.SetActive(true);
+            PlayerPrefsSave.Save();
+            SceneManager.LoadScene("EndScene");
 
 
         }

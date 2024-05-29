@@ -103,6 +103,7 @@ public class EnemyDamage : MonoBehaviour
         EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
         EnemyBar_S.value = EnemyBar_S.maxValue;
 
+
     }
     IEnumerator DeadFulldying()
     {

@@ -15570,6 +15570,7 @@ MonoBehaviour:
   EndScrin: {fileID: 189065540}
   Cavas: {fileID: 1057798985}
   HealBar_2: {fileID: 259429200}
+  PlayerPrefsSave: {fileID: 0}
 --- !u!114 &1120013083
 MonoBehaviour:
   m_ObjectHideFlags: 0
