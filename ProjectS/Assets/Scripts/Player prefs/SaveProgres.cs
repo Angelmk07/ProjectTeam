@@ -14,12 +14,14 @@ public class SaveProgres : MonoBehaviour
         {
 
             GameManager.GameMod = 1;
+            PlayerPrefs.SetInt("GameMod", GameManager.GameMod);
             SceneManager.LoadScene("Defence");
 
         }
         else
         {
             GameManager.GameMod = 1;
+            PlayerPrefs.SetInt("GameMod", GameManager.GameMod);
             SceneManager.LoadScene("Clikcer");
         }
 

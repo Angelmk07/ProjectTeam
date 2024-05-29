@@ -6810,7 +6810,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -121
+  m_SortingOrder: -202
   m_TargetDisplay: 0
 --- !u!1 &580502306
 GameObject:
@@ -10272,6 +10272,7 @@ RectTransform:
   m_Children:
   - {fileID: 1639879487}
   - {fileID: 1898807440}
+  - {fileID: 1113368660}
   - {fileID: 23895477}
   - {fileID: 762014005}
   - {fileID: 1807631293}
@@ -10727,7 +10728,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -10751,7 +10752,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -15491,12 +15492,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113368657}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.41, y: 4.05, z: 0}
-  m_LocalScale: {x: 1.1679, y: 1.1679, z: 1.1679}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1446, y: 768, z: -19782}
+  m_LocalScale: {x: 1.8399999, y: 1.8399999, z: 1.8399999}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1057798989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1120013079
 GameObject:
@@ -15528,7 +15529,7 @@ Transform:
   m_GameObject: {fileID: 1120013079}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4398615, y: 0.64779437, z: 3.4203382}
+  m_LocalPosition: {x: -1.4398615, y: 0.64779437, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18482,12 +18483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 3480, y: 2160}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.481
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -27536,10 +27537,10 @@ RectTransform:
   - {fileID: 1854965026}
   m_Father: {fileID: 1057798989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1187, y: 771}
-  m_SizeDelta: {x: 1208.8, y: 277.3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 733, y: -309}
+  m_SizeDelta: {x: 1208.8, y: 277.30005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1922132222
 GameObject:
@@ -30614,7 +30615,6 @@ SceneRoots:
   - {fileID: 1700957375}
   - {fileID: 1120013080}
   - {fileID: 1744867544}
-  - {fileID: 1113368660}
   - {fileID: 4916676576677557989}
   - {fileID: 1937663744}
   - {fileID: 17864101}

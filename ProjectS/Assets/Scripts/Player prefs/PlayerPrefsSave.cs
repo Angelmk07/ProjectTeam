@@ -9,10 +9,7 @@ public class PlayerPrefsSave : MonoBehaviour
     public PoverActivBust _PoverActivBust;
     public AddHealbar _addHealbar;
     
-    private void Start()
-    {
 
-    }
     internal void Save()
     {
 
@@ -57,6 +54,7 @@ public class PlayerPrefsSave : MonoBehaviour
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
         TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");
         AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("BankAttack");
+        GameManager.GameMod = PlayerPrefs.GetInt("GameMod");
     }
 
 }
