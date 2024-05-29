@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Character
+  - Explosive
+  - GroundEnemy
+  - Flying
+  - SpawnPoint1
+  - SpawnPoint2
+  - GamePlaces
+  - GamePlacesDefence
+  - TryToSpawnChecker
+  - rightuppointNotSpawn
+  - leftdownpointNotSpawn
   layers:
   - Default
   - TransparentFX

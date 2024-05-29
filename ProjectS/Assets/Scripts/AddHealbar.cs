@@ -10,7 +10,7 @@ public class AddHealbar : MonoBehaviour
     public static bool IsHealHave = false;
     [SerializeField] private Image HealBar_2Collor;
     private int cost = 4000;
-    private bool Isbuy = true;
+    internal bool Isbuy = true;
     public void ClickOnHeal()
     {
         if (((_clicksBank.Clicks - cost)> 0)&&Isbuy)

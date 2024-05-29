@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class PoverActivBust : MonoBehaviour
 {
-    [SerializeField] private BrainHeats Pover;
     [SerializeField] private ClicksBank clicks;
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private TextMeshProUGUI stak;
@@ -27,7 +26,7 @@ public class PoverActivBust : MonoBehaviour
             stakValue += 1;
             imagePower.color = Color.white;
             clicks.Clicks -= cost;
-            Pover.Pover += Poverbust;
+            BrainHeats.Pover += Poverbust;
             cost += costUp;
             costText.text = $"{cost} Exp";
             stak.text = $"x{stakValue}";
