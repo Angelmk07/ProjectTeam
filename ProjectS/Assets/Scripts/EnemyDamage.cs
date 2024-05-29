@@ -20,6 +20,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private Button Isactiv;
     [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
+    [SerializeField] private LvlCange _lvlCange;
     internal bool IsKiled=false;
    
     private void Start()
@@ -30,6 +31,7 @@ public class EnemyDamage : MonoBehaviour
         SoundPlay = GameObject.Find("SoundSystem").GetComponent<AudioSource>();
     }
     public float InteractWhithBar {  get => EnemyBar_S.value;  set=> EnemyBar_S.value = value; }
+    public float InteractWhithMaxBar {  get => EnemyBar_S.maxValue;  set=> EnemyBar_S.maxValue = value; }
 
 
 
@@ -45,14 +47,17 @@ public class EnemyDamage : MonoBehaviour
             DeadFirstEpizode.IsDead = false;
 
         }
-        if (EnemyBar_S.value <= 0.01f && !IsKiled)
+        if (EnemyBar_S.value <= 0.01f && (!IsKiled))
         {
             //StartCoroutine(Money());
-            if(GameManager.GameMod ==0)
+            if(GameManager.GameMod == 1)
+            {
                 StartCoroutine(DeadFulldying());
+                IsKiled = true;
+            }
+
             else
                 StartCoroutine(Dead());
-            IsKiled = true;
             _clicksBankView.text = $"Exp {_clicksBank.Clicks++} ";
             ScinChnge.color = Random.ColorHSV();
 
@@ -75,7 +80,7 @@ public class EnemyDamage : MonoBehaviour
         transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
 
         StartCoroutine("reternghost");
-        EnemyBar_S.value -= BrainHeats.Pover*TwoKnifes.PoverBust;
+        EnemyBar_S.value -= BrainHeats.Pover;
     }
     public void EnemyHeatBygranade()
     {
@@ -93,25 +98,31 @@ public class EnemyDamage : MonoBehaviour
     }
     IEnumerator Dead()
     {
+        LvlPlayer.ClickerLvl += 1;
+        LvlPlayer.ClickerLvlOnScreen += 1;
+        EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
+        EnemyBar_S.value += EnemyBar_S.maxValue;
         StartCoroutine(Money());
         Isactiv.interactable = false;
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         Isactiv.interactable = true;
-        EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
-        EnemyBar_S.value = EnemyBar_S.maxValue;
+
+
 
     }
     IEnumerator DeadFulldying()
     {
-        StartCoroutine(Money());
         Isactiv.interactable = false;
+        //_lvlCange.CheckEnemy();
+        StartCoroutine(Money());
+
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         Destroy(gameObject);
 
 
@@ -119,10 +130,10 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Money()
     {
         
-        _clicksBank.Clicks += 50* LvlPlayer.ClickerLvlOnScreen;
+        _clicksBank.Clicks += 50* (LvlPlayer.ClickerLvlOnScreen+1);
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
-        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";
+        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"{50* (LvlPlayer.ClickerLvlOnScreen + 1)}";
         NewExpHiBy.SetActive(false);
     }
 

@@ -18,7 +18,7 @@ public class StanG : MonoBehaviour
     {
         IsReadyToStan = false;
         Time.timeScale = 0.2f;
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSecondsRealtime(7f);
         IsReadyToStan = true;
         Time.timeScale = 1f;
     }
