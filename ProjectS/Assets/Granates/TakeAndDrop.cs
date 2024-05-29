@@ -19,6 +19,7 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] private GameObject CanvasPlay;
     [SerializeField] private GameObject PlaceForExplosiv;
     [SerializeField] private GameObject PlaceForFire;
+    [SerializeField] private GameObject PlaceForStan;
     
     //FireG FireG = new FireG();
     //Explosion ExplosionG = new Explosion();
@@ -79,7 +80,12 @@ public class TakeAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
             Instantiate(FireGanade, transform.position, Granade.transform.rotation, CanvasPlay.transform);
             transform.position = PlaceForFire.transform.position;
         }
+        if (gameObject.name == "Stan")
+        {
 
+            gameObject.GetComponent<StanG>().OnUseStan();
+            transform.position = PlaceForStan.transform.position;
+        }
 
 
 

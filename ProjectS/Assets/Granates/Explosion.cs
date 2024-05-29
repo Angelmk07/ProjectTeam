@@ -29,15 +29,12 @@ public class Explosion : MonoBehaviour
     //}
     private void Start()
     {
-        Debug.Log("Explre");
   
        Collider2D[] collider2Ds =  Physics2D.OverlapCircleAll(transform.position, radius);
         foreach(Collider2D collider in collider2Ds)
         {
-
             if (collider.gameObject.tag == "GroundEnemy" || collider.gameObject.tag == "Flying")
             {
-
                 collider.GetComponent<EnemyDamage>().InteractWhithBar -= 0.5f;
             }
             

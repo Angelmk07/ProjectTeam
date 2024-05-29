@@ -9,13 +9,10 @@ public class PlayerPrefsSave : MonoBehaviour
     public PoverActivBust _PoverActivBust;
     public AddHealbar _addHealbar;
     
-    private void Start()
+
+    internal void Save()
     {
 
-    }
-    void Save()
-    {
-        PlayerPrefs.SetInt("GameMod",0);
         PlayerPrefs.SetFloat("PoverBrainOun", BrainHeats.Pover);
         PlayerPrefs.SetInt("AttackPointOun", AttackMoneyBank.MoneyForTeam);
         PlayerPrefs.SetInt("CliksOun", _ClicksBank.Clicks);
@@ -32,11 +29,12 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetInt("LvlClicker", LvlPlayer.ClickerLvl);
         PlayerPrefs.SetInt("LvlDefence", LvlPlayer.DefenceLvl);
         PlayerPrefs.SetInt("LvlKnife", TwoKnifes.lvl);
+        PlayerPrefs.SetInt("BankAttack", AttackMoneyBank.MoneyForTeam);
         PlayerPrefs.Save();
     }
-    void Load()
+    internal void Load()
     {
-        PlayerPrefs.GetInt("GameMod");
+
         BrainHeats.Pover=PlayerPrefs.GetFloat("PoverBrainOun");
         AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("AttackPointOun");
         _ClicksBank.Clicks = PlayerPrefs.GetInt("CliksOun");
@@ -55,6 +53,8 @@ public class PlayerPrefsSave : MonoBehaviour
         LvlPlayer.ClickerLvl = PlayerPrefs.GetInt("LvlClicker");
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
         TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");
+        AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("BankAttack");
+        GameManager.GameMod = PlayerPrefs.GetInt("GameMod");
     }
 
 }

@@ -48,7 +48,7 @@ public class EnemyDamage : MonoBehaviour
         if (EnemyBar_S.value <= 0.01f && !IsKiled)
         {
             //StartCoroutine(Money());
-            if(GameManager.GameMod ==0)
+            if(GameManager.GameMod ==1)
                 StartCoroutine(DeadFulldying());
             else
                 StartCoroutine(Dead());
@@ -75,7 +75,7 @@ public class EnemyDamage : MonoBehaviour
         transform.DOShakeRotation(1.5f, 10f, 5, 60, true, ShakeRandomnessMode.Full);
 
         StartCoroutine("reternghost");
-        EnemyBar_S.value -= BrainHeats.Pover*TwoKnifes.PoverBust;
+        EnemyBar_S.value -= BrainHeats.Pover;
     }
     public void EnemyHeatBygranade()
     {
@@ -96,12 +96,13 @@ public class EnemyDamage : MonoBehaviour
         StartCoroutine(Money());
         Isactiv.interactable = false;
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         Isactiv.interactable = true;
         EnemyBar_S.maxValue += LvlPlayer.ClickerLvlOnScreen;
         EnemyBar_S.value = EnemyBar_S.maxValue;
+
 
     }
     IEnumerator DeadFulldying()
@@ -109,9 +110,9 @@ public class EnemyDamage : MonoBehaviour
         StartCoroutine(Money());
         Isactiv.interactable = false;
         transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         transform.DORotateQuaternion(Quaternion.identity, 1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         Destroy(gameObject);
 
 
@@ -119,10 +120,10 @@ public class EnemyDamage : MonoBehaviour
     IEnumerator Money()
     {
         
-        _clicksBank.Clicks += 50* LvlPlayer.ClickerLvlOnScreen;
+        _clicksBank.Clicks += 50* (LvlPlayer.ClickerLvlOnScreen+1);
         NewExpHiBy.SetActive(true);
         yield return new WaitForSeconds(2f);
-        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"+500";
+        NewExpHiBy.GetComponent<TextMeshProUGUI>().text = $"{50* (LvlPlayer.ClickerLvlOnScreen + 1)}";
         NewExpHiBy.SetActive(false);
     }
 

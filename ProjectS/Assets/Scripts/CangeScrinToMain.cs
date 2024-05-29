@@ -8,6 +8,6 @@ public class CangeScrinToMain : MonoBehaviour
     
     public void OpenMainScrin()
     {
-        SceneManager.LoadScene("MainScrin");
+        SceneManager.LoadScene("Clicker");
     }
 }
