@@ -20,7 +20,7 @@ public class SaveProgres : MonoBehaviour
         }
         else
         {
-            GameManager.GameMod = 1;
+            GameManager.GameMod = 0;
             PlayerPrefs.SetInt("GameMod", GameManager.GameMod);
             SceneManager.LoadScene("Clikcer");
         }
