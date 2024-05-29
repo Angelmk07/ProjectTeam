@@ -12,6 +12,7 @@ public class TimeDamage : MonoBehaviour
     [SerializeField] private GameObject Cavas;
     [SerializeField] private Image HealBar_2;
     [SerializeField] PlayerPrefsSave PlayerPrefsSave;
+    [SerializeField] ClicksBank clicker;
 
     void Update()
     {
@@ -42,6 +43,7 @@ public class TimeDamage : MonoBehaviour
             Time.timeScale = 0;
             Cavas.SetActive(false);
             EndScrin.SetActive(true);
+            clicker.Clicks /= 2;
             PlayerPrefsSave.Save();
             SceneManager.LoadScene("EndScene");
 

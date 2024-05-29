@@ -15572,6 +15572,7 @@ MonoBehaviour:
   Cavas: {fileID: 1057798985}
   HealBar_2: {fileID: 259429200}
   PlayerPrefsSave: {fileID: 0}
+  clicker: {fileID: 94887312}
 --- !u!114 &1120013083
 MonoBehaviour:
   m_ObjectHideFlags: 0
