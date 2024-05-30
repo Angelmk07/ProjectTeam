@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 700 Exp
+  m_text: 700 000 Exp
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6632,7 +6632,7 @@ RectTransform:
   m_GameObject: {fileID: 929576075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 57.557514, y: 32.216396, z: 1.4947199}
+  m_LocalScale: {x: 58.57628, y: 32.786625, z: 1.5211763}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 685695056}
@@ -13570,7 +13570,6 @@ GameObject:
   - component: {fileID: 1129832529}
   - component: {fileID: 1129832528}
   - component: {fileID: 1129832527}
-  - component: {fileID: 1129832526}
   - component: {fileID: 1129832525}
   m_Layer: 5
   m_Name: StartDefence
@@ -13611,19 +13610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6320882402de93945a943c6ad0de14af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefsSave: {fileID: 0}
---- !u!114 &1129832526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129832523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984a035159f47d044b5a84474ef04a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PlayerPrefsSave: {fileID: 1120013085}
 --- !u!114 &1129832527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13668,18 +13655,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1129832526}
-        m_TargetAssemblyTypeName: CangeScrinToMain, Assembly-CSharp
-        m_MethodName: OpenMainScrin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1129832525}
         m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
         m_MethodName: ChangeScenStart
@@ -14735,7 +14710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.46951857}
   m_AnchorMax: {x: 0, y: 0.46951857}
-  m_AnchoredPosition: {x: 220.1997, y: -144.29999}
+  m_AnchoredPosition: {x: 220.2002, y: -144.29999}
   m_SizeDelta: {x: 237, y: 168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233011494
@@ -18037,7 +18012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1689494425
 RectTransform:
   m_ObjectHideFlags: 0
