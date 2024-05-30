@@ -44,7 +44,7 @@ public class ForEnemy : MonoBehaviour
             PosX = Random.Range(leftdownpoint.transform.position.x, rightuppoint.transform.position.x);
             if (PosX> leftdownpointNotSpawn.transform.position.x && PosX < rightuppointNotSpawn.transform.position.x)
             {
-                float yMidle = rightuppointNotSpawn.transform.position.y - leftdownpointNotSpawn.transform.position.y;
+                float yMidle = rightuppoint.transform.position.y - rightuppointNotSpawn.transform.position.y;
                 float yRange = (Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y - rightuppointNotSpawn.transform.position.y));
                 PosY = yRange * yMidle;
 

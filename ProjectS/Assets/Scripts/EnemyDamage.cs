@@ -20,7 +20,6 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private Button Isactiv;
     [SerializeField] private GameObject NewExpHiBy ;
     [SerializeField] private Slider EnemyBar_S;
-    [SerializeField] private LvlCange _lvlCange;
     internal bool IsKiled=false;
    
     private void Start()

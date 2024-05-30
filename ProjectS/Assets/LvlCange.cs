@@ -41,6 +41,8 @@ public class LvlCange : MonoBehaviour
     {
         if (groundEnemyCount == 0 && flyingEnemyCount == 0)
         {
+            LvlPlayer.DefenceLvl += 1;
+            LvlPlayer.DefenceLvlOnScreen += 1;
             spawn.spawn();
         }
     }

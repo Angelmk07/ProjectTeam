@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be61a59001ab3f14084d9963fc46b9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 1
 --- !u!114 &1948874263805010513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   Isactiv: {fileID: 4367893173060008280}
   NewExpHiBy: {fileID: 0}
   EnemyBar_S: {fileID: 8022992391026972063}
+  _lvlCange: {fileID: 0}
 --- !u!114 &3707185137498061420
 MonoBehaviour:
   m_ObjectHideFlags: 0
