@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager _instance;
-    static public int GameMod = 1;
+    static public int GameMod = 0;
     static public bool IsScenLoad = false;
     private GameManager() { }
 
