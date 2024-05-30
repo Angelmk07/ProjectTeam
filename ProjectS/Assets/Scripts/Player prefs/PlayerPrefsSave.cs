@@ -16,21 +16,30 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetFloat("PoverBrainOun", BrainHeats.Pover);
         PlayerPrefs.SetInt("AttackPointOun", AttackMoneyBank.MoneyForTeam);
         PlayerPrefs.SetInt("CliksOun", _ClicksBank.Clicks);
-        PlayerPrefs.SetInt("PowerOun", _PoverActivBust.stakValue);
+        PlayerPrefs.SetInt("PowerOunStack", _PoverActivBust.stakValue);
+        PlayerPrefs.SetInt("PowerOun", _PoverActivBust.cost);
         if (PasivHeal.IsbuyDo)
             PlayerPrefs.SetInt("PasivBought", 1);
         else
             PlayerPrefs.SetInt("PasivBought", 0);
         PlayerPrefs.SetFloat("EnemyPower",EnemyPower.EnemyStrength);
         if (_addHealbar.Isbuy)
+        {
             PlayerPrefs.SetInt("PasivBought", 1);
+
+        }
         else
+        {
             PlayerPrefs.SetInt("PasivBought", 0);
+
+        }
+
         PlayerPrefs.SetInt("LvlClicker", LvlPlayer.ClickerLvl);
         PlayerPrefs.SetInt("LvlDefence", LvlPlayer.DefenceLvl);
         PlayerPrefs.SetInt("LvlKnife", TwoKnifes.lvl);
         PlayerPrefs.SetInt("BankAttack", AttackMoneyBank.MoneyForTeam);
         PlayerPrefs.SetInt("CostSwoard", SwordAttackBust.cost);
+
 
         PlayerPrefs.Save();
     }
@@ -40,7 +49,8 @@ public class PlayerPrefsSave : MonoBehaviour
         BrainHeats.Pover=PlayerPrefs.GetFloat("PoverBrainOun");
         AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("AttackPointOun");
         _ClicksBank.Clicks = PlayerPrefs.GetInt("CliksOun");
-        _PoverActivBust.stakValue = PlayerPrefs.GetInt("PowerOun");
+        _PoverActivBust.stakValue = PlayerPrefs.GetInt("PowerOunStack");
+        _PoverActivBust.cost = PlayerPrefs.GetInt("PowerOun");
 
         if (PlayerPrefs.GetInt("PasivBought") == 1)
             PasivHeal.IsbuyDo = true;
@@ -49,9 +59,18 @@ public class PlayerPrefsSave : MonoBehaviour
 
         EnemyPower.EnemyStrength = PlayerPrefs.GetFloat("EnemyPower");
         if (PlayerPrefs.GetInt("PasivBought") == 1)
+        {
+
             _addHealbar.Isbuy = true;
+            AddHealbar.IsHealHave = true;
+        }
+
         else
+        {
             _addHealbar.Isbuy = false;
+            AddHealbar.IsHealHave = false;
+        }
+
         LvlPlayer.ClickerLvl = PlayerPrefs.GetInt("LvlClicker");
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
         TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");

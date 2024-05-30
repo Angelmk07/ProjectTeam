@@ -12,12 +12,10 @@ public class PoverActivBust : MonoBehaviour
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private TextMeshProUGUI stak;
     [SerializeField] private Image imagePower;
-    public int stakValue=0;
-    
-    
-    private int cost = 1000;
-    private int costUp = 300;
-    private float Poverbust = 0.01f;
+    internal  int stakValue=0;
+    internal  int cost = 300;
+    private int costUp = 50;
+    private float Poverbust = 0.4f;
 
     public void OnClick()
     {
@@ -28,11 +26,11 @@ public class PoverActivBust : MonoBehaviour
             clicks.Clicks -= cost;
             BrainHeats.Pover += Poverbust;
             cost += costUp;
-            costText.text = $"{cost} Exp";
-            stak.text = $"x{stakValue}";
+
 
         }
-
+        costText.text = $"{cost} Exp";
+        stak.text = $"x{stakValue}";
     }
 
 
