@@ -30,6 +30,8 @@ public class PlayerPrefsSave : MonoBehaviour
         PlayerPrefs.SetInt("LvlDefence", LvlPlayer.DefenceLvl);
         PlayerPrefs.SetInt("LvlKnife", TwoKnifes.lvl);
         PlayerPrefs.SetInt("BankAttack", AttackMoneyBank.MoneyForTeam);
+        PlayerPrefs.SetInt("CostSwoard", SwordAttackBust.cost);
+
         PlayerPrefs.Save();
     }
     internal void Load()
@@ -54,6 +56,7 @@ public class PlayerPrefsSave : MonoBehaviour
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
         TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");
         AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("BankAttack");
+        SwordAttackBust.cost = PlayerPrefs.GetInt("CostSwoard");
         GameManager.GameMod = PlayerPrefs.GetInt("GameMod");
     }
 

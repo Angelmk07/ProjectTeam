@@ -6,22 +6,42 @@ using UnityEngine;
 public class LvlCange : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI textMesh;
 
-    bool AddEnemy;
-    public void CheckEnemy()
+
+    [SerializeField] private SpawnEnemy spawn;
+    [SerializeField] private TextMeshProUGUI groundEnemyText;
+
+
+    private int groundEnemyCount;
+    private int flyingEnemyCount;
+
+
+
+    void Update()
     {
-        GameObject[] FlyingEnemys = GameObject.FindGameObjectsWithTag("Flying");
-        GameObject[] GrounEnemys = GameObject.FindGameObjectsWithTag("GroundEnemy");
-        if (FlyingEnemys.Length == 0 && GrounEnemys.Length == 0)
+        UpdateEnemyCounts();
+        UpdateUIText();
+        CheckAndSpawnEnemies();
+    }
+
+    void UpdateEnemyCounts()
+    {
+        groundEnemyCount = GameObject.FindGameObjectsWithTag("GroundEnemy").Length;
+        flyingEnemyCount = GameObject.FindGameObjectsWithTag("Flying").Length;
+    }
+
+    void UpdateUIText()
+    {
+
+        groundEnemyText.text = $"Enemies: {groundEnemyCount + flyingEnemyCount}"  ;
+
+    }
+
+    void CheckAndSpawnEnemies()
+    {
+        if (groundEnemyCount == 0 && flyingEnemyCount == 0)
         {
-            LvlPlayer.DefenceLvl += 1;
-            AddEnemy = true;
-        }
-        else
-        {
-            textMesh.text = $"Осталось {GrounEnemys.Length+FlyingEnemys.Length} противников";
-            AddEnemy = false;
+            spawn.spawn();
         }
     }
 }

@@ -115,15 +115,20 @@ public class EnemyDamage : MonoBehaviour
     }
     IEnumerator DeadFulldying()
     {
-        Isactiv.interactable = false;
-        //_lvlCange.CheckEnemy();
-        StartCoroutine(Money());
+        if (gameObject != null)
+        {
+            Isactiv.interactable = false;
+            //_lvlCange.CheckEnemy();
+            StartCoroutine(Money());
 
-        transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
-        yield return new WaitForSecondsRealtime(1.5f);
-        transform.DORotateQuaternion(Quaternion.identity, 1f);
-        yield return new WaitForSecondsRealtime(1f);
-        Destroy(gameObject);
+            transform.DOShakeRotation(1.5f, 50f, 9, 90, true, ShakeRandomnessMode.Harmonic);
+            yield return new WaitForSecondsRealtime(1.5f);
+            transform.DORotateQuaternion(Quaternion.identity, 1f);
+            yield return new WaitForSecondsRealtime(1f);
+            Destroy(gameObject);
+        }
+
+
 
 
     }

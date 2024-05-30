@@ -54,7 +54,7 @@ public class ForEnemy : MonoBehaviour
                 PosY = Random.Range(leftdownpoint.transform.position.y, rightuppoint.transform.position.y);
             }
             GameObject newObject = Instantiate(Prefub, new Vector2(PosX, PosY), Quaternion.identity, CanvasDef.transform);
-             newObject.transform.localScale = new Vector3(1, 1, 1);
+             //newObject.transform.localScale = new Vector3(1, 1, 1);
             return newObject;
 
         }
