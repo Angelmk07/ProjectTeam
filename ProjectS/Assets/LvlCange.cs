@@ -12,6 +12,7 @@ public class LvlCange : MonoBehaviour
     [SerializeField] private TextMeshProUGUI groundEnemyText;
 
 
+
     private int groundEnemyCount;
     private int flyingEnemyCount;
 
@@ -43,6 +44,7 @@ public class LvlCange : MonoBehaviour
         {
             LvlPlayer.DefenceLvl += 1;
             LvlPlayer.DefenceLvlOnScreen += 1;
+            
             spawn.spawn();
         }
     }

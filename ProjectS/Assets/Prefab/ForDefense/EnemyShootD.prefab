@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 6332344240813414482}
   - component: {fileID: 491386250812860337}
   - component: {fileID: 1928385646751420548}
-  - component: {fileID: 5819788637640963304}
   - component: {fileID: 7832963277269822267}
   - component: {fileID: 6934154350026440383}
   - component: {fileID: 5566485187528104809}
@@ -270,7 +269,6 @@ MonoBehaviour:
   Isactiv: {fileID: 0}
   NewExpHiBy: {fileID: 0}
   EnemyBar_S: {fileID: 992432082742637672}
-  _lvlCange: {fileID: 0}
 --- !u!114 &1928385646751420548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,18 +283,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particleSystemAttack: {fileID: 8801700053802023099}
   EnemyBar_S: {fileID: 992432082742637672}
---- !u!114 &5819788637640963304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6171237984307667532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7325b6934aa0a409e8ff3a5771e716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7832963277269822267
 MonoBehaviour:
   m_ObjectHideFlags: 0

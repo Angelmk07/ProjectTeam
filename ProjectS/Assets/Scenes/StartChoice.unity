@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 463117214}
   - component: {fileID: 463117213}
   - component: {fileID: 463117212}
-  - component: {fileID: 463117211}
+  - component: {fileID: 463117215}
   m_Layer: 5
   m_Name: StartDefence
   m_TagString: Untagged
@@ -640,18 +640,6 @@ RectTransform:
   m_AnchoredPosition: {x: -533.46, y: -434}
   m_SizeDelta: {x: 225.4218, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &463117211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463117209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984a035159f47d044b5a84474ef04a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &463117212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,9 +684,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 463117211}
-        m_TargetAssemblyTypeName: CangeScrinToMain, Assembly-CSharp
-        m_MethodName: OpenMainScrin
+      - m_Target: {fileID: 463117215}
+        m_TargetAssemblyTypeName: StartChoice, Assembly-CSharp
+        m_MethodName: OnClickDefence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -746,6 +734,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463117209}
   m_CullTransparentMesh: 1
+--- !u!114 &463117215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463117209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e9115e07511b046bbb39531e762fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &550297317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter
+  m_text: Enter Defense
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d99c457887fee494eb3e4e5c15bd3c85, type: 2}
   m_sharedMaterial: {fileID: -6549665290516084419, guid: d99c457887fee494eb3e4e5c15bd3c85, type: 2}
@@ -2069,7 +2069,7 @@ GameObject:
   - component: {fileID: 1794687649}
   - component: {fileID: 1794687648}
   - component: {fileID: 1794687647}
-  - component: {fileID: 1794687646}
+  - component: {fileID: 1794687650}
   m_Layer: 5
   m_Name: StartClicker
   m_TagString: Untagged
@@ -2097,18 +2097,6 @@ RectTransform:
   m_AnchoredPosition: {x: 520, y: -434}
   m_SizeDelta: {x: 225.4218, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1794687646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794687644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984a035159f47d044b5a84474ef04a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1794687647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,9 +2141,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794687646}
-        m_TargetAssemblyTypeName: CangeScrinToMain, Assembly-CSharp
-        m_MethodName: OpenMainScrin
+      - m_Target: {fileID: 1794687650}
+        m_TargetAssemblyTypeName: StartChoice, Assembly-CSharp
+        m_MethodName: OnClickClicker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2203,6 +2191,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794687644}
   m_CullTransparentMesh: 1
+--- !u!114 &1794687650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794687644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e9115e07511b046bbb39531e762fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1802816920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter
+  m_text: Clicker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d99c457887fee494eb3e4e5c15bd3c85, type: 2}
   m_sharedMaterial: {fileID: -6549665290516084419, guid: d99c457887fee494eb3e4e5c15bd3c85, type: 2}

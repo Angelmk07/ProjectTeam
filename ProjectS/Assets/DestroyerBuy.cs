@@ -9,12 +9,17 @@ public class DestroyerBuy : MonoBehaviour
     [SerializeField] private GameObject Destroer;
     internal static bool HaveDestroer = false;
 
-    void Onclick()
+    public void Onclick()
     {
-        if(ClicksBank.Clicks- cost >= 0)
+        if(ClicksBank.Clicks- cost >= 0&&!HaveDestroer )
         {
             Destroer.SetActive(true);
             HaveDestroer = true;
+            Destroer.SetActive(true);
+        }
+        if (HaveDestroer)
+        {
+            gameObject.SetActive(false);
         }
     }
 

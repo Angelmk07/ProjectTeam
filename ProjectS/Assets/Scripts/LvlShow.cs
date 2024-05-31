@@ -13,8 +13,8 @@ public class LvlShow : MonoBehaviour
     {
         LvlClicker.text = $" {LvlPlayer.ClickerLvlOnScreen}";
         LvlDefence.text = $" {LvlPlayer.DefenceLvlOnScreen}";
-        LvlClickerMAx.text = $" Max{LvlPlayer.ClickerLvl}";
-        LvlDefenceMax.text = $" Max{LvlPlayer.DefenceLvl}";
+        LvlClickerMAx.text = $" Max {LvlPlayer.ClickerLvl}";
+        LvlDefenceMax.text = $" Max {LvlPlayer.DefenceLvl}";
 
     }
 }

@@ -80,6 +80,10 @@ public class EnemyDamage : MonoBehaviour
 
         StartCoroutine("reternghost");
         EnemyBar_S.value -= BrainHeats.Pover;
+        if(IsKiled)
+        {
+            Destroy(gameObject);
+        }
     }
     public void EnemyHeatBygranade()
     {

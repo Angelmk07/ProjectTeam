@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScrin.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/StartChoice.unity
+    guid: c860b5fdc440ee7459bd1793ae0b2429
+  - enabled: 1
     path: Assets/Scenes/Clikcer.unity
     guid: df3eb2a6545db1d4896e9a76e253ae1f
   - enabled: 1

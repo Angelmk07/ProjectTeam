@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 4776300295292111162}
   - component: {fileID: 2422685993223038946}
   - component: {fileID: 2922035623359482072}
-  - component: {fileID: 4987099976557626050}
   - component: {fileID: 3370924134731497262}
   - component: {fileID: 4505259190945389981}
   - component: {fileID: 7852249943614580940}
@@ -385,18 +384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particleSystemAttack: {fileID: 3621276011273673576}
   EnemyBar_S: {fileID: 4959179969962166407}
---- !u!114 &4987099976557626050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2407335823061432336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7325b6934aa0a409e8ff3a5771e716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3370924134731497262
 MonoBehaviour:
   m_ObjectHideFlags: 0

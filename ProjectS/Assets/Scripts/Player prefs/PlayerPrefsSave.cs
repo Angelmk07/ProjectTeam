@@ -8,10 +8,27 @@ public class PlayerPrefsSave : MonoBehaviour
     public ClicksBank _ClicksBank;
     public PoverActivBust _PoverActivBust;
     public AddHealbar _addHealbar;
-    
+    [SerializeField] private GameObject Explosiv;
+    [SerializeField] private GameObject Stan;
+    [SerializeField] private GameObject Fire;
+    [SerializeField] private GameObject Destroyer;
 
     internal void Save()
     {
+
+        if (BuyExplosiv.HaveItem)
+            PlayerPrefs.SetInt("ExplosivBought", 1);
+        else
+            PlayerPrefs.SetInt("ExplosivBought", 0);
+        if (BuyFire.HaveItem)
+            PlayerPrefs.SetInt("FireBought", 1);
+        else
+            PlayerPrefs.SetInt("FireBought", 0);
+        if (BuyStopTime.HaveItem)
+            PlayerPrefs.SetInt("StopTime", 1);
+        else
+            PlayerPrefs.SetInt("StopTime", 0);
+
 
         PlayerPrefs.SetFloat("PoverBrainOun", BrainHeats.Pover);
         PlayerPrefs.SetInt("AttackPointOun", AttackMoneyBank.MoneyForTeam);
@@ -23,6 +40,8 @@ public class PlayerPrefsSave : MonoBehaviour
         else
             PlayerPrefs.SetInt("PasivBought", 0);
         PlayerPrefs.SetFloat("EnemyPower",EnemyPower.EnemyStrength);
+        PlayerPrefs.SetFloat("TwoKnifse",TwoKnifes.cost);
+        PlayerPrefs.SetFloat("TwoKnifse",TwoKnifes.chanse);
         if (_addHealbar.Isbuy)
         {
             PlayerPrefs.SetInt("PasivBought", 1);
@@ -31,6 +50,17 @@ public class PlayerPrefsSave : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("PasivBought", 0);
+
+        }
+
+        if (DestroyerBuy.HaveDestroer)
+        {
+            PlayerPrefs.SetInt("HaveDestroer", 1);
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("HaveDestroer", 0);
 
         }
 
@@ -45,6 +75,31 @@ public class PlayerPrefsSave : MonoBehaviour
     }
     internal void Load()
     {
+        if (PlayerPrefs.GetInt("ExplosivBought")==1)
+            Explosiv.SetActive(true);
+        else
+            Explosiv.SetActive(false);
+
+        if (PlayerPrefs.GetInt("FireBought") == 1)
+            Fire.SetActive(true);
+        else
+            Fire.SetActive(false);
+
+        if (PlayerPrefs.GetInt("StopTime") == 1)
+            Stan.SetActive(true);
+        else
+            Stan.SetActive(false);
+
+        if (PlayerPrefs.GetInt("HaveDestroer") ==1)
+        {
+            Destroyer.SetActive(true);
+
+        }
+        else
+        {
+            Destroyer.SetActive(false);
+
+        }
 
         BrainHeats.Pover=PlayerPrefs.GetFloat("PoverBrainOun");
         AttackMoneyBank.MoneyForTeam = PlayerPrefs.GetInt("AttackPointOun");
@@ -71,6 +126,8 @@ public class PlayerPrefsSave : MonoBehaviour
             AddHealbar.IsHealHave = false;
         }
 
+        TwoKnifes.cost = PlayerPrefs.GetInt("TwoKnifseCost");
+        TwoKnifes.chanse = PlayerPrefs.GetInt("TwoKnifseChanse");
         LvlPlayer.ClickerLvl = PlayerPrefs.GetInt("LvlClicker");
         LvlPlayer.DefenceLvl = PlayerPrefs.GetInt("LvlDefence");
         TwoKnifes.lvl = PlayerPrefs.GetInt("LvlKnife");

@@ -141,7 +141,6 @@ GameObject:
   - component: {fileID: 1948874263805010513}
   - component: {fileID: 3707185137498061420}
   - component: {fileID: 8085636274693089831}
-  - component: {fileID: 1712685489101785198}
   - component: {fileID: 1301643283002823900}
   - component: {fileID: 5849333035505619092}
   m_Layer: 5
@@ -323,7 +322,6 @@ MonoBehaviour:
   Isactiv: {fileID: 4367893173060008280}
   NewExpHiBy: {fileID: 0}
   EnemyBar_S: {fileID: 8022992391026972063}
-  _lvlCange: {fileID: 0}
 --- !u!114 &3707185137498061420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,18 +346,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aab7fc18b21a7474f92cd0be0301057f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1712685489101785198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010012449317044833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7325b6934aa0a409e8ff3a5771e716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1301643283002823900
