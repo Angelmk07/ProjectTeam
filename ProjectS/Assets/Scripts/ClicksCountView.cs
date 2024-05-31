@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ClicksCountView : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _clicksCountFrield;
+    [SerializeField] private TextMeshProUGUI _clicksCountFrieldInShop;
     [SerializeField] private ClicksBank _clicksBank;
-    [SerializeField] private TextMashProUGUI _clicksCountFrield;
-    [SerializeField] private TextMashProUGUI _clicksCountFrieldInShop;
+
 
     private void Update()
     {
