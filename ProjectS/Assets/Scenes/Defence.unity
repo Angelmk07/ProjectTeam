@@ -284,7 +284,7 @@ RectTransform:
   m_GameObject: {fileID: 7877656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.00462963, y: 0.00462963, z: 0.00462963}
+  m_LocalScale: {x: 0.0048342594, y: 0.0048342594, z: 0.0048342594}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 638521690}
@@ -2492,7 +2492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 219.3999, y: 115.299805}
+  m_AnchoredPosition: {x: 224.99988, y: 123.29974}
   m_SizeDelta: {x: 288.60986, y: 32.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193218704
@@ -4728,7 +4728,7 @@ RectTransform:
   m_GameObject: {fileID: 351713971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 58.574986, y: 32.7859, z: 1.5211427}
+  m_LocalScale: {x: 60.64854, y: 33.94652, z: 1.5749912}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 789175186}
@@ -6349,7 +6349,7 @@ RectTransform:
   m_GameObject: {fileID: 505005410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.008839277, y: 0.008839277, z: 0.008839277}
+  m_LocalScale: {x: 0.009816016, y: 0.009816016, z: 0.009816016}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 571495810}
@@ -9190,7 +9190,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -19.71605, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -31152,7 +31152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 219.40002, y: 525}
+  m_AnchoredPosition: {x: 225, y: 533}
   m_SizeDelta: {x: 438.59998, y: 1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097522487
